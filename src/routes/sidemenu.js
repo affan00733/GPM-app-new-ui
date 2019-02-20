@@ -22,8 +22,11 @@ class SideMenu extends Component {
             <View style={styles.container}>
                 <ScrollView>
 
+                <Text onPress={this.navigateToScreen('home')} >home</Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('aboutUS')}>about us</Text>
+                <Text></Text>
 
-            
                 </ScrollView>
                 
             </View>

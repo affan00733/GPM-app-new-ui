@@ -7,12 +7,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 import SideMenu from './sidemenu'
 
 import home from '../menu/home/home'
+import aboutUS from '../menu/about us/aboutUS'
 
 
 const homeNav = createStackNavigator({
     home : {
         screen : home
-    }
+    },
+    
 })
 
 
@@ -21,7 +23,9 @@ const Dr = createDrawerNavigator({
     home: {
         screen: homeNav
     },
-   
+    aboutUS : {
+        screen : aboutUS
+    }
  
 
 
