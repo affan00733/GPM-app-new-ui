@@ -8,13 +8,21 @@ import SideMenu from './sidemenu'
 
 import home from '../menu/home/home'
 import aboutUS from '../menu/about us/aboutUS'
+import principleDesk from '../menu/about us/options/principleDesk'
 
 
 const homeNav = createStackNavigator({
     home : {
         screen : home
     },
-    
+    aboutUS : {
+        screen : aboutUS
+    },
+    // principleDesk : {
+    //     screen : principleDesk
+    // }
+},{
+    // headerMode : 'none'
 })
 
 
@@ -23,9 +31,7 @@ const Dr = createDrawerNavigator({
     home: {
         screen: homeNav
     },
-    aboutUS : {
-        screen : aboutUS
-    }
+   
  
 
 

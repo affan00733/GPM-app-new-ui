@@ -11,6 +11,7 @@ import { Container,Content,Card, CardItem, Thumbnail, Body, Left, Right, Button,
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
 let width = Dimensions.get('window').width;
+let height = Dimensions.get('window').height;
 
 const logo1 = require("./images/mkbhd.jpg");
 
@@ -55,13 +56,11 @@ class CardComponent extends Component {
                     </Left>
                 </CardItem>
 
-                <CardItem style={{ height: 20 }}>
-                    <Text>999 likes</Text>
-                </CardItem>
+                
                 <CardItem>
                     <Body>
                         {/*  */}
-                    <Card style={{ flex: 1 ,width : width * 0.9}}>
+                    <Card style={{ width : width * 0.70}}>
                 <CardItem>
                 <Left>
                 <Thumbnail source={logo} />
@@ -85,23 +84,13 @@ class CardComponent extends Component {
 
             <CardItem style={{ paddingVertical: 0 }}>
                 <Left>
-                <Button iconLeft transparent>
-                    <Icon active name="chatbubbles" />
-                    <Text>64</Text>
-                </Button>
+                <Text></Text>
                 </Left>
                 <Body>
-                <Button iconLeft transparent>
-                    <Icon active name="git-compare" />
-                    <Text>347</Text>
-                    <Icon active name="heart" />
-                    <Text>8K</Text>
-                </Button>
+                
                 </Body>
                 <Right>
-                <Button iconLeft transparent>
-                    <Icon active name="mail" />
-                </Button>
+                
                 </Right>
             </CardItem>
                 </Card>
@@ -127,23 +116,13 @@ class CardComponent extends Component {
 
             <CardItem style={{ paddingVertical: 0 }}>
                 <Left>
-                <Button iconLeft transparent>
-                    <Icon active name="chatbubbles" />
-                    <Text>91</Text>
-                </Button>
+                <Text></Text>
                 </Left>
                 <Body>
-                <Button iconLeft transparent>
-                    <Icon active name="git-compare" />
-                    <Text>656</Text>
-                    <Icon active name="heart" />
-                    <Text>21K</Text>
-                </Button>
+                
                 </Body>
                 <Right>
-                <Button iconLeft transparent>
-                    <Icon active name="mail" />
-                </Button>
+                
                 </Right>
             </CardItem>
                 </Card>
