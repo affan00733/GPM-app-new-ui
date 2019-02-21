@@ -21,22 +21,22 @@ class HomeTab extends Component {
     render() {
         return (
             <Container style={styles.container}>
-                <Header>
+                {/* <Header>
                     <Left><Icon name="ios-camera-outline" style={{ paddingLeft: 10 }} /></Left>
                     <Body><Text style={{ fontSize: 20 }}>Instagram</Text></Body>
                     <Right><Icon style={{ paddingRight: 10 }} name="ios-send-outline" /></Right>
-                </Header>
+                </Header> */}
                 <Content>
 
                     <View style={{ height: 100 }}>
-                        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 7 }}>
+                        {/* <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 7 }}>
                             <Text style={{ fontWeight: 'bold' }}>Stories</Text>
 
                             <View style={{ flexDirection: 'row', 'alignItems': 'center' }}>
                                 <Icon name="md-play" style={{ fontSize: 14 }}></Icon>
                                 <Text style={{ fontWeight: 'bold' }}> Watch All</Text>
                             </View>
-                        </View>
+                        </View> */}
                         <View style={{ flex: 3 }}>
                             <ScrollView
                                 horizontal={true}

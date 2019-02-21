@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { StackNavigator } from 'react-navigation'
-import MainScreen from '../../../components/MainScreen'
+import { createStackNavigator } from 'react-navigation'
+import MainScreen from '../../../components/AppTabNavigator/HomeTab'
 
 export default class AboutUS extends React.Component {
   render() {
@@ -12,11 +12,13 @@ export default class AboutUS extends React.Component {
 
 }
 
-const AppStackNavigator = StackNavigator({
+const AppStackNavigator = createStackNavigator({
 
   Main: {
     screen: MainScreen
   }
+},{
+  headerMode : 'none'
 })
 
 

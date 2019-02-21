@@ -3,12 +3,14 @@ import {
     View,
     Text,
     StyleSheet,
-    Image
+    Image,
+    Dimensions
 } from "react-native";
 
 import { Container,Content,Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
+let width = Dimensions.get('window').width;
 
 const logo1 = require("./images/mkbhd.jpg");
 
@@ -29,8 +31,8 @@ class CardComponent extends Component {
                     <Left>
                         <Thumbnail source={require('../assets/me.jpg')} />
                         <Body>
-                            <Text>Varun </Text>
-                            <Text note>Jan 15, 2018</Text>
+                            <Text>principal desk </Text>
+                            {/* <Text note>Jan 15, 2018</Text> */}
                         </Body>
                     </Left>
                 </CardItem>
@@ -59,7 +61,7 @@ class CardComponent extends Component {
                 <CardItem>
                     <Body>
                         {/*  */}
-                    <Card style={{ flex: 1 ,width : 370}}>
+                    <Card style={{ flex: 1 ,width : width * 0.9}}>
                 <CardItem>
                 <Left>
                 <Thumbnail source={logo} />
