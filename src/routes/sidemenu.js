@@ -26,7 +26,20 @@ class SideMenu extends Component {
                 <Text></Text>
                 <Text onPress={this.navigateToScreen('aboutUS')}>about us</Text>
                 <Text></Text>
-
+                <Text onPress={this.navigateToScreen('admission')}>admission</Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('department')}>department</Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('studentSec')}>student section</Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('centres')}>centres </Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('gallery')}>gallery </Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('alumini')}>alumini </Text>
+                <Text></Text>
+                <Text onPress={this.navigateToScreen('contact')}>contact </Text>
+                <Text></Text>
                 </ScrollView>
                 
             </View>

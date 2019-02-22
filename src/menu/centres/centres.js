@@ -6,8 +6,8 @@ import { Block, Card, Icon, Label } from '../../components';
 import { Overlay, Button } from 'react-native-elements'
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
-import PrincipalDesk from './options/principleDesk'
-export default class AboutUS extends React.Component {
+import PrincipalDesk from '../about us/options/principleDesk'
+export default class Centres extends React.Component {
   static navigationOptions = {
     headerLeftContainerStyle: {
       paddingLeft: 34,
@@ -23,7 +23,7 @@ export default class AboutUS extends React.Component {
       <TouchableOpacity style={{ marginRight: 10 }} ><Icon notification /></TouchableOpacity>
     ),
     headerTitle: (
-      <Block row middle><Text h4>About US</Text></Block>
+      <Block row middle><Text h4>Centres</Text></Block>
     )
   }
   constructor(props) {

@@ -8,7 +8,13 @@ import SideMenu from './sidemenu'
 
 import home from '../menu/home/home'
 import aboutUS from '../menu/about us/aboutUS'
-import principleDesk from '../menu/about us/options/principleDesk'
+import admission from '../menu/admission/admission'
+import alumini from '../menu/alumini/alumini'
+import centres from '../menu/centres/centres'
+import contact from '../menu/contact/contact'
+import department from '../menu/department/department'
+import gallery from '../menu/gallery/gallery'
+import studentSec from '../menu/student section/studentSec'
 
 
 const homeNav = createStackNavigator({
@@ -18,9 +24,28 @@ const homeNav = createStackNavigator({
     aboutUS : {
         screen : aboutUS
     },
-    // principleDesk : {
-    //     screen : principleDesk
-    // }
+    admission : {
+        screen :admission 
+    },
+    department : {
+        screen : department
+    },
+    studentSec : {
+        screen : studentSec
+    },
+    centres : {
+        screen : centres
+    },
+    gallery : {
+        screen : gallery
+    },
+    alumini : {
+        screen : alumini
+    },
+    contact : {
+        screen : contact
+    }
+  
 },{
     // headerMode : 'none'
 })
