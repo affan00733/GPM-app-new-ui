@@ -6,7 +6,13 @@ import { Block, Card, Icon, Label } from '../../components';
 import { Overlay, Button } from 'react-native-elements'
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
-import PrincipalDesk from '../about us/options/principleDesk'
+import ConsTest from './options/ConsTest'
+import CentLib from './options/centLib'
+import ComClg from './options/comClg'
+import ComPol from './options/comPol'
+import ExamCell from './options/examCell'
+import PlacSer from './options/placSer'
+
 export default class Centres extends React.Component {
   static navigationOptions = {
     headerLeftContainerStyle: {
@@ -29,7 +35,12 @@ export default class Centres extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isVisible: false
+      isVisibleConsTest: false,
+      isVisibleCentLib: false,
+      isVisibleComClg: false,
+      isVisibleComPol: false,
+      isVisibleExamCell: false,
+      isVisiblePlacSer: false,
     }
   }
 
@@ -37,30 +48,85 @@ export default class Centres extends React.Component {
     return (
       <View>
         <Overlay
-          isVisible={this.state.isVisible}
-          onBackdropPress={() => this.setState({ isVisible: false })}
+          isVisible={this.state.isVisibleConsTest}
+          onBackdropPress={() => this.setState({ isVisibleConsTest: false })}
           windowBackgroundColor="rgba(255, 255, 255, .5)"
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
         >
-          <PrincipalDesk />
+          <ConsTest />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleCentLib}
+          onBackdropPress={() => this.setState({ isVisibleCentLib: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <CentLib />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleComClg}
+          onBackdropPress={() => this.setState({ isVisibleComClg: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <ComClg />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleComPol}
+          onBackdropPress={() => this.setState({ isVisibleComPol: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <ComPol />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleExamCell}
+          onBackdropPress={() => this.setState({ isVisibleExamCell: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <ExamCell />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisiblePlacSer}
+          onBackdropPress={() => this.setState({ isVisiblePlacSer: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <PlacSer />
         </Overlay>
         <View>
         <View style={{ flexDirection: 'row' }}
         >
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
-              title="Principal desk"
+              title="Central Library"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleCentLib: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
-              title="About Institute"
+              title="Examination Cell"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleExamCell: true })}
             />
           </View>
           
@@ -70,16 +136,16 @@ export default class Centres extends React.Component {
         >
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
-              title="Mission and Vision"
+              title="Placemnt Services"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisiblePlacSer: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
-              title="Organizing Structure"
+              title="Community Polytechnic"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleComPol: true })}
             />
           </View>
          
@@ -90,50 +156,22 @@ export default class Centres extends React.Component {
         >
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
-              title="Governing Body"
+              title="Community College"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleComClg: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
-              title="RTI Act"
+              title="Consultancy and Testing"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleConsTest: true })}
             />
           </View>
           
         </View>
-        <View style={{ flexDirection: 'row' }}
-        >
-          <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
-            <Button
-              title="Citizen Charter"
-              type="outline"
-              onPress={() => this.setState({ isVisible: true })}
-            />
-          </View>
-          <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
-            <Button
-              title="Mandatory Disclosure"
-              type="outline"
-              onPress={() => this.setState({ isVisible: true })}
-            />
-          </View>
-          
-        </View>
-        <View style={{ flexDirection: 'row' }}
-        >
-          <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
-            <Button
-              title="Infrastructure"
-              type="outline"
-              onPress={() => this.setState({ isVisible: true })}
-            />
-          </View>
-         
-          
-        </View>
+      
+      
         </View>
       </View>
     );
