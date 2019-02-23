@@ -7,6 +7,8 @@ import { Block, Card, Icon, Label } from '../../../components';
 export default class AboutInst extends React.Component {
 
   render() {
+    console.log('About Inst')    
+
     return (
       <AppStackNavigator />
     );

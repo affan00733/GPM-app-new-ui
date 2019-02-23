@@ -7,6 +7,8 @@ import { Block, Card, Icon, Label } from '../../../components';
 export default class CitiChar extends React.Component {
 
   render() {
+    console.log('Citizen char')    
+
     return (
       <AppStackNavigator />
     );

@@ -7,6 +7,15 @@ import { Overlay, Button } from 'react-native-elements'
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 import PrincipalDesk from './options/principleDesk'
+import AboutInst from './options/aboutInst'
+import MissionVission from './options/missionVission'
+import OrganStruc from './options/organStruc'
+import GovernBod from './options/governBod'
+import Rti from './options/rti'
+import CitiChar from './options/citiChar'
+import ManDis from './options/manDis'
+import Infra from './options/infra'
+
 export default class AboutUS extends React.Component {
   static navigationOptions = {
     headerLeftContainerStyle: {
@@ -29,7 +38,17 @@ export default class AboutUS extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isVisible: false
+      isVisiblePrincipalDesk: false,
+      isVisibleAboutInst: false,
+      isVisibleMissionVission: false,
+      isVisibleOrganStruc: false,
+      isVisibleGovernBod: false,
+      isVisibleRti: false,
+      isVisibleCitiChar: false,
+      isVisibleManDis: false,
+      isVisibleInfra: false,
+
+
     }
   }
 
@@ -37,8 +56,8 @@ export default class AboutUS extends React.Component {
     return (
       <View>
         <Overlay
-          isVisible={this.state.isVisible}
-          onBackdropPress={() => this.setState({ isVisible: false })}
+          isVisible={this.state.isVisiblePrincipalDesk}
+          onBackdropPress={() => this.setState({ isVisiblePrincipalDesk: false })}
           windowBackgroundColor="rgba(255, 255, 255, .5)"
           // overlayBackgroundColor="red"
           width={width * 0.85}
@@ -46,6 +65,96 @@ export default class AboutUS extends React.Component {
         >
           <PrincipalDesk />
         </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleAboutInst}
+          onBackdropPress={() => this.setState({ isVisibleAboutInst: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <AboutInst />
+        </Overlay>
+        {/*  */} 
+        <Overlay
+          isVisible={this.state.isVisibleMissionVission}
+          onBackdropPress={() => this.setState({ isVisibleMissionVission: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <MissionVission />
+        </Overlay>
+        {/*  */} 
+        <Overlay
+          isVisible={this.state.isVisibleOrganStruc}
+          onBackdropPress={() => this.setState({ isVisibleOrganStruc: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <OrganStruc />
+        </Overlay>
+        {/*  */} 
+        <Overlay
+          isVisible={this.state.isVisibleGovernBod}
+          onBackdropPress={() => this.setState({ isVisibleGovernBod: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <GovernBod />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleRti}
+          onBackdropPress={() => this.setState({ isVisibleRti: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <Rti />
+        </Overlay>
+        {/*  */}
+        <Overlay
+          isVisible={this.state.isVisibleCitiChar}
+          onBackdropPress={() => this.setState({ isVisibleCitiChar: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <CitiChar />
+        </Overlay>
+        {/*  */}
+         <Overlay
+          isVisible={this.state.isVisibleManDis}
+          onBackdropPress={() => this.setState({ isVisibleManDis: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <ManDis />
+        </Overlay>
+        {/*  */} 
+        <Overlay
+          isVisible={this.state.isVisibleInfra}
+          onBackdropPress={() => this.setState({ isVisibleInfra: false })}
+          windowBackgroundColor="rgba(255, 255, 255, .5)"
+          // overlayBackgroundColor="red"
+          width={width * 0.85}
+          height={height * 0.85}
+        >
+          <Infra />
+        </Overlay>
+        {/*  */}
+
         <View>
         <View style={{ flexDirection: 'row' }}
         >
@@ -53,14 +162,14 @@ export default class AboutUS extends React.Component {
             <Button
               title="Principal desk"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisiblePrincipalDesk: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
               title="About Institute"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleAboutInst: true })}
             />
           </View>
           
@@ -72,14 +181,14 @@ export default class AboutUS extends React.Component {
             <Button
               title="Mission and Vision"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleMissionVission: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
               title="Organizing Structure"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleOrganStruc: true })}
             />
           </View>
          
@@ -92,14 +201,14 @@ export default class AboutUS extends React.Component {
             <Button
               title="Governing Body"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleGovernBod: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
               title="RTI Act"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleRti: true })}
             />
           </View>
           
@@ -110,14 +219,14 @@ export default class AboutUS extends React.Component {
             <Button
               title="Citizen Charter"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleCitiChar: true })}
             />
           </View>
           <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
             <Button
               title="Mandatory Disclosure"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleManDis: true })}
             />
           </View>
           
@@ -128,7 +237,7 @@ export default class AboutUS extends React.Component {
             <Button
               title="Infrastructure"
               type="outline"
-              onPress={() => this.setState({ isVisible: true })}
+              onPress={() => this.setState({ isVisibleInfra: true })}
             />
           </View>
          

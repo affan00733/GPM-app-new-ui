@@ -7,6 +7,8 @@ import { Block, Card, Icon, Label } from '../../../components';
 export default class Infra extends React.Component {
 
   render() {
+    console.log('Infra')    
+
     return (
       <AppStackNavigator />
     );

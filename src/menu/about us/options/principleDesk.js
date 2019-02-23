@@ -7,6 +7,8 @@ import { Block, Card, Icon, Label } from '../../../components';
 export default class PrincipleDesk extends React.Component {
 
   render() {
+    console.log('principal')    
+
     return (
       <AppStackNavigator />
     );
@@ -21,6 +23,7 @@ const AppStackNavigator = createStackNavigator({
   }
 },{
   headerMode : 'none'
+  
 })
 
 

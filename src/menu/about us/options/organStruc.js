@@ -7,6 +7,8 @@ import { Block, Card, Icon, Label } from '../../../components';
 export default class OrganStruc extends React.Component {
 
   render() {
+    console.log('Organ')    
+
     return (
       <AppStackNavigator />
     );
