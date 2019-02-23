@@ -15,19 +15,7 @@ import PlacSer from './options/placSer'
 
 export default class Centres extends React.Component {
   static navigationOptions = {
-    headerLeftContainerStyle: {
-      paddingLeft: 34,
-
-    },
-    headerRightContainerStyle: {
-      paddingRight: 24
-    },
-    headerLeft: (
-      <TouchableOpacity style={{ marginLeft: 10 }}  ><Icon menu /></TouchableOpacity>
-    ),
-    headerRight: (
-      <TouchableOpacity style={{ marginRight: 10 }} ><Icon notification /></TouchableOpacity>
-    ),
+   
     headerTitle: (
       <Block row middle><Text h4>Centres</Text></Block>
     )

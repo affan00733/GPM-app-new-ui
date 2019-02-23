@@ -1,8 +1,8 @@
 import { createDrawerNavigator, createAppContainer, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 import React, { Component } from 'react'
 import { Container, Header, Content } from 'native-base';
-import { Text } from 'react-native'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import { Text,Button,TouchableOpacity } from 'react-native'
+// import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import SideMenu from './sidemenu'
 
@@ -15,6 +15,8 @@ import contact from '../menu/contact/contact'
 import department from '../menu/department/department'
 import gallery from '../menu/gallery/gallery'
 import studentSec from '../menu/student section/studentSec'
+
+import { Block, Card, Icon, Label } from '../components';
 
 
 const homeNav = createStackNavigator({
@@ -48,6 +50,21 @@ const homeNav = createStackNavigator({
   
 },{
     // headerMode : 'none'
+    navigationOptions: ({ navigation }) => ({
+        headerLeftContainerStyle: {
+            paddingLeft: 34,
+
+        },
+        headerRightContainerStyle: {
+            paddingRight: 24
+        },
+        headerLeft: (
+            <TouchableOpacity style={{marginLeft : 10}} onPress={() => navigation.toggleDrawer()} ><Icon menu /></TouchableOpacity>
+        ),
+        headerRight: (
+            <TouchableOpacity style={{marginRight : 10}} ><Icon notification /></TouchableOpacity>
+        ),
+      }),
 })
 
 
