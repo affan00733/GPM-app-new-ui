@@ -43,19 +43,20 @@ const styles = StyleSheet.create({
 
 class Home extends Component {
     static navigationOptions = {
-    
+
         headerTitle: (
             <Block row middle><Text h4>Home</Text></Block>
-        )
+        ),
+
     }
-    constructor(props){
+    constructor(props) {
         super(props)
 
-        this.state={
+        this.state = {
 
         }
     }
-    
+
     componentWillMount() {
 
         this.scrollY = new Animated.Value(0)
@@ -105,7 +106,7 @@ class Home extends Component {
                             elevation: 1,
                             marginTop: Platform.OS == 'android' ? 30 : null
                         }}>
-                            <Icon1 name="ios-search" size={20} style={{ marginRight: 10,marginTop : 14.5 }} />
+                            <Icon1 name="ios-search" size={20} style={{ marginRight: 10, marginTop: 14.5 }} />
                             <TextInput
                                 underlineColorAndroid="transparent"
                                 placeholder="Try New Delhi"
@@ -167,11 +168,11 @@ class Home extends Component {
                                 </View>
                             </View>
                         </View>
-                        <View style={{ marginTop: 40 ,marginBottom: 40 }}>
+                        <View style={{ marginTop: 40, marginBottom: 40 }}>
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
                                 Homes around the world
                             </Text>
-                            <View style={{ paddingHorizontal: 20, paddingBottom : 20,marginTop: 20,marginBottom : 20 , flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                            <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                                 <HomeNew width={width}
                                     name="The Cozy Place"
                                     type="PRIVATE ROOM - 2 BEDS"
@@ -184,8 +185,8 @@ class Home extends Component {
                                     price={82}
                                     rating={4}
                                 />
-                                </View>
-                                <View style={{ paddingHorizontal: 20, paddingBottom : 20,marginTop: 10,marginBottom : 20 , flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                            </View>
+                            <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 10, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
 
                                 <HomeNew width={width}
                                     name="The Cozy Place"
@@ -197,7 +198,7 @@ class Home extends Component {
 
                             </View>
                         </View>
-                        <View  style={{ paddingVertical: 25 ,marginBottom : 40}}>
+                        <View style={{ paddingVertical: 25, marginBottom: 40 }}>
                             <Card row middle style={styles.margin}>
                                 <Block flex={1.2} center middle style={{ marginRight: 20 }}>
                                     <Text light height={43} size={36} spacing={-0.45}>86</Text>
@@ -252,7 +253,7 @@ class Home extends Component {
                             >
                                 <Block style={styles.driver}>
                                     <TouchableOpacity activeOpacity={0.8}
-onPress={()=>this.props.navigation.openDrawer()}
+                                        onPress={() => this.props.navigation.navigate('St')}
                                     >
                                         <Block row center>
                                             <Block>

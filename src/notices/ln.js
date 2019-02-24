@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, WebView, View, Linking, Button, Modal, FlatList, Dimensions, PermissionsAndroid, Alert, TouchableHighlight, TouchableOpacity } from 'react-native';
 import Pdf from 'react-native-pdf';
 import RNFS from 'react-native-fs'
@@ -20,7 +20,7 @@ export default class Ln extends Component {
     link2: '',
     name: '',
     pdf: '',
-    Nicon : ''
+    Nicon: ''
     // source: require('./a.pdf')
   };
 
@@ -29,7 +29,7 @@ export default class Ln extends Component {
     // this.UserRegistrationFunction()
   }
   fetchData = async () => {
-    const response = await fetch("http://192.168.43.64/ln.php");
+    const response = await fetch("http://192.168.0.105/GPM/notices/ln.php");
     const json = await response.json();
 
     this.setState({ link: json });
@@ -40,7 +40,7 @@ export default class Ln extends Component {
   };
 
   notice = () => {
-    
+
     if (this.state.name == '') {
       // this.setState({Nicon : 'file-pdf-o'})
       return (
@@ -61,17 +61,17 @@ export default class Ln extends Component {
     }
 
     else {
-            return(
-      <WebView
-              source={{uri: this.state.name}}
-                       style={styles.web}
+      return (
+        <WebView
+          source={{ uri: this.state.name }}
+          style={styles.web}
 
-            />     
+        />
 
-            )
+      )
 
     }
-    
+
   }
 
 
@@ -95,24 +95,24 @@ export default class Ln extends Component {
           onRequestClose={() => {
             Alert.alert('Modal has been closed.');
           }}>
-           <View style={{ marginTop: 22 }}>
-            <View style={{ alignItems: 'center', justifyContent: 'center', }}> 
+          <View style={{ marginTop: 22 }}>
+            <View style={{ alignItems: 'center', justifyContent: 'center', }}>
               <Button
                 title='close'
 
                 onPress={() => {
-                  this.setState({modalVisible : false});
+                  this.setState({ modalVisible: false });
                 }}>
                 >
 
 
           </Button>
             </View>
-            </View>
+          </View>
 
-              {this.notice()}
-          {console.log(this.state.name)}  
-          
+          {this.notice()}
+          {console.log(this.state.name)}
+
         </Modal>
 
         <FlatList
@@ -123,27 +123,27 @@ export default class Ln extends Component {
             <View>
               <TouchableOpacity
                 onPress={() => {
-                  this.setState({modalVisible : true});
+                  this.setState({ modalVisible: true });
                   this.setState({ name: item.link })
-                  this.setState({ source: { uri: `http://192.168.43.64/Admin/pages/notices/pdf/${item.filename}` } })
+                  this.setState({ source: { uri: `http://192.168.0.105/Admin/pages/notices/pdf/${item.filename}` } })
                   console.log(this.state.source)
 
                 }}>
                 <View style={styles.notice}>
-                <IconFont name = 'external-link' color='red' size={28}/>
+                  <IconFont name='external-link' color='red' size={28} />
 
-                <Text style={styles.noticeText}>
-                  {` ${item.name} `}
+                  <Text style={styles.noticeText}>
+                    {` ${item.name} `}
 
-                </Text>
-</View>
+                  </Text>
+                </View>
               </TouchableOpacity>
 
             </View>
           }
         />
 
-        
+
         {/* <Button
           title=""
           onPress={() => this.fetchData()}

@@ -18,6 +18,8 @@ import studentSec from '../menu/student section/studentSec'
 
 import { Block, Card, Icon, Label } from '../components';
 
+import Login  from '../login/login'
+import Signup  from '../login/signup'
 
 const homeNav = createStackNavigator({
     home : {
@@ -62,7 +64,7 @@ const homeNav = createStackNavigator({
             <TouchableOpacity style={{marginLeft : 10}} onPress={() => navigation.toggleDrawer()} ><Icon menu /></TouchableOpacity>
         ),
         headerRight: (
-            <TouchableOpacity style={{marginRight : 10}} ><Icon notification /></TouchableOpacity>
+            <TouchableOpacity style={{marginRight : 10}} onPress={() => navigation.navigate('Login')} ><Icon notification /></TouchableOpacity>
         ),
       }),
 })
@@ -96,25 +98,25 @@ const Dr = createDrawerNavigator({
 //     })
 
 
-// const St = createStackNavigator({
-//     Login: { screen: Login },
-//     Signup: { screen: Signup },
-//     Dr2 : Dr2,
-//     // Dr1 : Dr
+const St = createStackNavigator({
+    Login: { screen: Login },
+    Signup: { screen: Signup },
+    // Dr2 : Dr2,
+    // Dr1 : Dr
 
-// }, {
-//         initialRouteName: 'Login',
-//         navigationOptions: ({ navigation }) => ({
+}, {
+        initialRouteName: 'Login',
+        navigationOptions: ({ navigation }) => ({
 
-//         }),
-//         headerMode: 'none'
-//     })
+        }),
+        headerMode: 'none'
+    })
 
 const Sw = createSwitchNavigator({
 
     Dr: Dr,
 
-    // St: St,
+    St: St,
 })
 
 export default Sw
