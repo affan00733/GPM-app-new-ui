@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation'
-import MainScreen from '../../../../components/AppTabNavigator/HomeTab'
+import MainScreen from '../../../../components/AppTabNavigator/curr'
 import { Block, Card, Icon, Label } from '../../../components';
 
 export default class Curr extends React.Component {

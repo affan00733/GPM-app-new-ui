@@ -7,7 +7,7 @@ import {
 } from "react-native";
 
 import { Container, Content, Icon, Thumbnail, Header, Left, Right, Body } from 'native-base'
-import CardComponent from '../CardComponent'
+import CardComponent from '../curr'
 
 class HomeTab extends Component {
 
@@ -75,8 +75,7 @@ class HomeTab extends Component {
                         </View>
                     </View>
                     <CardComponent imageSource="1" likes="101" />
-                    {/* <CardComponent imageSource="2" likes="201" />
-                    <CardComponent imageSource="3" likes="301" /> */}
+                   
                 </Content>
             </Container>
         );

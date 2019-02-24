@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation'
-import MainScreen from '../../../../../components/AppTabNavigator/HomeTab'
+import MainScreen from '../../../../../components/AppTabNavigator/broch'
 
 export default class Broch extends React.Component {
 

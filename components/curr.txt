@@ -1,0 +1,1479 @@
+
+import React, { Component } from 'react';
+import { Platform, StyleSheet, Image, Button, Animated, ScrollView, Dimensions, TouchableOpacity, Modal } from 'react-native';
+import styles from '../../styles/styles'
+import { Container, Header, View, DeckSwiper, Card, CardItem, Thumbnail, Text, Left, Body, Icon } from 'native-base';
+import Pdf from 'react-native-pdf';
+
+import { RkButton, RkCard } from 'react-native-ui-kitten';
+import ParallaxScrollView from 'react-native-parallax-scrollview';
+let deviceHeight = Dimensions.get('window').height;
+
+export default class Curr extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      p16its1: false,
+      p16its2: false,
+      p16its3: false,
+      p16its4: false,
+      p16its5: false,
+      p16its6: false,
+      p16itsem : '',
+
+  
+      p11its1: false,
+      p11its2: false,
+      p11its3: false,
+      p11its4: false,
+      p11its5: false,
+      p11its6: false,
+      p11itsem : '',
+
+ 
+      p16cos1: false,
+      p16cos2: false,
+      p16cos3: false,
+      p16cos4: false,
+      p16cos5: false,
+      p16cos6: false,
+      p16cosem : '',
+
+  
+      p11cos1: false,
+      p11cos2: false,
+      p11cos3: false,
+      p11cos4: false,
+      p11cos5: false,
+      p11cos6: false,
+      p11cosem : '',
+
+    
+      p16ees1: false,
+      p16ees2: false,
+      p16ees3: false,
+      p16ees4: false,
+      p16ees5: false,
+      p16ees6: false,
+      p16eesem : '',
+
+   
+      p11ees1: false,
+      p11ees2: false,
+      p11ees3: false,
+      p11ees4: false,
+      p11ees5: false,
+      p11ees6: false,
+      p11eesem : '',
+
+  
+      p16ecs1: false,
+      p16ecs2: false,
+      p16ecs3: false,
+      p16ecs4: false,
+      p16ecs5: false,
+      p16ecs6: false,
+      p16ecsem : '',
+
+    
+      p11ecs1: false,
+      p11ecs2: false,
+      p11ecs3: false,
+      p11ecs4: false,
+      p11ecs5: false,
+      p11ecs6: false,
+      p11ecsem : '',
+
+      p16mes1: false,
+      p16mes2: false,
+      p16mes3: false,
+      p16mes4: false,
+      p16mes5: false,
+      p16mes6: false,
+      p16mesem : '',
+
+  
+      p16ces1: false,
+      p16ces2: false,
+      p16ces3: false,
+      p16ces4: false,
+      p16ces5: false,
+      p16ces6: false,
+      p16cesem : '',
+
+   
+      p11ces1: false,
+      p11ces2: false,
+      p11ces3: false,
+      p11ces4: false,
+      p11ces5: false,
+      p11ces6: false,
+      p11cesem : '',
+
+      p11iss1: false,
+      p11iss2: false,
+      p11iss3: false,
+      p11iss4: false,
+      p11iss5: false,
+      p11iss6: false,
+      p11issem : '',
+
+    }
+    
+
+   
+  }
+  render() {
+    return (
+
+      <ParallaxScrollView
+        windowHeight={deviceHeight * 0.5}
+        backgroundSource={{ uri: 'http://i.imgur.com/UyjQBkJ.png' }
+        }
+        leftIconOnPress={() => { this.props.navigation.openDrawer() }}
+        navBarTitle='Curriculum'
+        userName='Curriculum'
+        userTitle=' '
+        navBarTitleColor='black'
+        navBarColor='white'
+        userImage='http://i.imgur.com/uma9OfG.jpg'
+        leftIcon={{ name: 'bars', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome' }}
+        rightIcon={{ name: 'user', color: 'rgba(193, 193, 193, 1)', size: 30, type: 'font-awesome' }}
+      >
+        <ScrollView style={{ flex: 1, backgroundColor: '#EBEDEF' }}>
+
+          {/* <View><Text style={{ fontWeight: 'bold', fontSize: 26, paddingLeft: 10 }}>Principle Desk</Text></View> */}
+
+          <View style={{ marginBottom: 50, marginTop: 25, paddingBottom: 50 }}>
+            <View style={{ padding: 10 }}>
+              <RkCard style={{ padding: 10, borderRadius: 15 }}>
+                <View rkCardHeader>
+
+                  <View>
+                    <Text>Curriculum 2016</Text>
+
+                  </View>
+
+                </View>
+                <View rkCardHeader>
+
+                  <View>
+                    <Text>Information Technology</Text>
+
+                  </View>
+
+                </View>
+                <View rkCardContent>
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      // this.setState({ p16its1: true ,p16itsem : require('./pdf/p16/p16its1.pdf')});
+                      this.setState({ p16its1: true ,p16itsem : {uri : 'http://192.168.43.64/pdf/p16/p16its1.pdf'}});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 1</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p16its1: true ,p16itsem : require('./pdf/p16/p16its2.pdf')});
+
+
+
+                    }}>
+  <View style={styles.button}>
+
+<Text style={styles.buttonText}>Semester 2</Text>
+</View>               
+     </TouchableOpacity> 
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p16its1: true ,p16itsem : require('./pdf/p16/p16its3.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 3</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p16its1: true ,p16itsem : require('./pdf/p16/p16its4.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 4</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p16its1: true ,p16itsem : require('./pdf/p16/p16its5.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 5</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p16its1: true ,p16itsem : require('./pdf/p16/p16its6.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 6</Text>
+                    </View>              
+                        </TouchableOpacity>
+                  <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.p16its1}
+                    onRequestClose={() => {
+                      Alert.alert('Modal has been closed.');
+                    }}>
+                    <View style={{ marginTop: 22 }}>
+                      <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+                        <Button
+                          title='close'
+
+                          onPress={() => {
+                            this.setState({ p16its1: false });
+                          }}>
+                          >
+          
+          
+          </Button>
+                        <Pdf
+                          source={this.state.p16itsem}
+                          onLoadComplete={(numberOfPages, filePath) => {
+                            console.log(`number of pages: ${numberOfPages}`);
+                          }}
+                          onPageChanged={(page, numberOfPages) => {
+                            console.log(`current page: ${page}`);
+                          }}
+                          onError={(error) => {
+                            console.log(error);
+                          }}
+                          style={styles.pdf}
+                        />
+                      </View>
+                    </View>
+
+
+                  </Modal>
+                </View>
+
+
+              </RkCard>
+            </View>
+
+
+
+
+            <View style={{ padding: 10 }}>
+              <RkCard style={{ padding: 10, borderRadius: 15 }}>
+             
+
+            <View rkCardHeader>
+
+<View>
+  <Text>Computer Engineering</Text>
+
+</View>
+
+</View>
+<View rkCardContent>
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16cos1: true ,p16itsem : require('./pdf/p16/p16cos1.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 1</Text>
+  </View>              
+      </TouchableOpacity>
+<TouchableOpacity
+  onPress={() => {
+    this.setState({ p16cos1: true ,p16cosem : require('./pdf/p16/p16cos2.pdf')});
+
+
+
+  }}>
+  <Text>Semester 2</Text>
+</TouchableOpacity> 
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16cos1: true ,p16cosem : require('./pdf/p16/p16cos3.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 3</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16cos1: true ,p16cosem : require('./pdf/p16/p16cos3.pdf')}); /// not found sem 4
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 4</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16cos1: true ,p16cosem : require('./pdf/p16/p16cos3.pdf')}); /// not found sem 5
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 5</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16cos1: true ,p16cosem : require('./pdf/p16/p16cos3.pdf')}); /// not found sem 6
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 6</Text>
+  </View>              
+      </TouchableOpacity>
+<Modal
+  animationType="slide"
+  transparent={false}
+  visible={this.state.p16cos1}
+  onRequestClose={() => {
+    Alert.alert('Modal has been closed.');
+  }}>
+  <View style={{ marginTop: 22 }}>
+    <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+      <Button
+        title='close'
+
+        onPress={() => {
+          this.setState({ p16cos1: false });
+        }}>
+        >
+
+
+</Button>
+      <Pdf
+        source={this.state.p16cosem}
+        onLoadComplete={(numberOfPages, filePath) => {
+          console.log(`number of pages: ${numberOfPages}`);
+        }}
+        onPageChanged={(page, numberOfPages) => {
+          console.log(`current page: ${page}`);
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        style={styles.pdf}
+      />
+    </View>
+  </View>
+
+
+</Modal>
+</View>
+</RkCard>
+</View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<View rkCardHeader>
+
+<View>
+  <Text>Electrical Engineering</Text>
+
+</View>
+
+</View>
+<View rkCardContent>
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16eesem : require('./pdf/p16/p16ees1.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 1</Text>
+  </View>              
+      </TouchableOpacity>
+<TouchableOpacity
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16eesem : require('./pdf/p16/p16ees2.pdf')});
+
+
+
+  }}>
+  <Text>Semester 2</Text>
+</TouchableOpacity> 
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16eesem : require('./pdf/p16/p16ees3.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 3</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16eesem : require('./pdf/p16/p16ees4.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 4</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16eesem : require('./pdf/p16/p16ees5.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 5</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16eesem : require('./pdf/p16/p16ees5.pdf')}); /// not found sem 6
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 6</Text>
+  </View>              
+      </TouchableOpacity>
+<Modal
+  animationType="slide"
+  transparent={false}
+  visible={this.state.p16ees1}
+  onRequestClose={() => {
+    Alert.alert('Modal has been closed.');
+  }}>
+  <View style={{ marginTop: 22 }}>
+    <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+      <Button
+        title='close'
+
+        onPress={() => {
+          this.setState({ p16ees1: false });
+        }}>
+        >
+
+
+</Button>
+      <Pdf
+        source={this.state.p16eesem}
+        onLoadComplete={(numberOfPages, filePath) => {
+          console.log(`number of pages: ${numberOfPages}`);
+        }}
+        onPageChanged={(page, numberOfPages) => {
+          console.log(`current page: ${page}`);
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        style={styles.pdf}
+      />
+    </View>
+  </View>
+
+
+</Modal>
+</View>
+
+
+{/* Electronics Engineering */}
+
+
+
+<View rkCardHeader>
+
+<View>
+  <Text>Electronics Engineering</Text>
+
+</View>
+
+</View>
+<View rkCardContent>
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ecs1: true ,p16eesem : require('./pdf/p16/p16ecs1.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 1</Text>
+  </View>              
+      </TouchableOpacity>
+<TouchableOpacity
+  onPress={() => {
+    this.setState({ p16ecs1: true ,p16ecsem : require('./pdf/p16/p16ecs2.pdf')});
+
+
+
+  }}>
+  <Text>Semester 2</Text>
+</TouchableOpacity> 
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ecs1: true ,p16ecsem : require('./pdf/p16/p16ecs3.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 3</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ecs1: true ,p16eesem : require('./pdf/p16/p16ecs4.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 4</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ecs1: true ,p16ecsem : require('./pdf/p16/p16ecs5.pdf')});
+
+ 
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 5</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ecs1: true ,p16ecsem : require('./pdf/p16/p16ecs5.pdf')});/// not found sem 6
+
+
+
+  }}>
+<View style={styles.button}>
+    <Text style={styles.buttonText}>Semester 6</Text>
+  </View>              
+      </TouchableOpacity>
+<Modal
+  animationType="slide"
+  transparent={false}
+  visible={this.state.p16ecs1}
+  onRequestClose={() => {
+    Alert.alert('Modal has been closed.');
+  }}>
+  <View style={{ marginTop: 22 }}>
+    <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+      <Button
+        title='close'
+
+        onPress={() => {
+          this.setState({ p16ecs1: false });
+        }}>
+        >
+
+
+</Button>
+      <Pdf
+        source={this.state.p16ecsem}
+        onLoadComplete={(numberOfPages, filePath) => {
+          console.log(`number of pages: ${numberOfPages}`);
+        }}
+        onPageChanged={(page, numberOfPages) => {
+          console.log(`current page: ${page}`);
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        style={styles.pdf}
+      />
+    </View>
+  </View>
+
+
+</Modal>
+</View>
+
+
+
+
+{/* Mechanical Engineering */}
+
+
+<View rkCardHeader>
+
+<View>
+  <Text>Mechanical Engineering</Text>
+
+</View>
+
+</View>
+<View rkCardContent>
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16mes1: true ,p16mesem : require('./pdf/p16/p16mes1.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 1</Text>
+  </View>              
+      </TouchableOpacity>
+<TouchableOpacity
+  onPress={() => {
+    this.setState({ p16mes1: true ,p16mesem : require('./pdf/p16/p16mes2.pdf')});
+
+
+
+  }}>
+  <Text>Semester 2</Text>
+</TouchableOpacity> 
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16mes1: true ,p16mesem : require('./pdf/p16/p16mes3.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 3</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16mes1: true ,p16mesem : require('./pdf/p16/p16mes4.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 4</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16mes1: true ,p16eesem : require('./pdf/p16/p16mes5.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 5</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16mes1: true ,p16mesem : require('./pdf/p16/p16mes6.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 6</Text>
+  </View>              
+      </TouchableOpacity>
+<Modal
+  animationType="slide"
+  transparent={false}
+  visible={this.state.p16mes1}
+  onRequestClose={() => {
+    Alert.alert('Modal has been closed.');
+  }}>
+  <View style={{ marginTop: 22 }}>
+    <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+      <Button
+        title='close'
+
+        onPress={() => {
+          this.setState({ p16mes1: false });
+        }}>
+        >
+
+
+</Button>
+      <Pdf
+        source={this.state.p16mesem}
+        onLoadComplete={(numberOfPages, filePath) => {
+          console.log(`number of pages: ${numberOfPages}`);
+        }}
+        onPageChanged={(page, numberOfPages) => {
+          console.log(`current page: ${page}`);
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        style={styles.pdf}
+      />
+    </View>
+  </View>
+
+
+</Modal>
+</View>
+
+
+
+
+{/* Civil Engineering */}
+
+
+<View rkCardHeader>
+
+<View>
+  <Text>Civil Engineering</Text>
+
+</View>
+
+</View>
+<View rkCardContent>
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ces1: true ,p16eesem : require('./pdf/p16/p16ces1.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 1</Text>
+  </View>              
+      </TouchableOpacity>
+<TouchableOpacity
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16cesem : require('./pdf/p16/p16ces2.pdf')});
+
+
+
+  }}>
+  <Text>Semester 2</Text>
+</TouchableOpacity> 
+<TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ees1: true ,p16cesem : require('./pdf/p16/p16ces3.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 3</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ces1: true ,p16cesem : require('./pdf/p16/p16ces4.pdf')});
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 4</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ces1: true ,p16cesem : require('./pdf/p16/p16ces4.pdf')});/// not found sem 5
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 5</Text>
+  </View>              
+      </TouchableOpacity>
+      <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+  onPress={() => {
+    this.setState({ p16ces1: true ,p16cesem : require('./pdf/p16/p16ces4.pdf')});/// not found sem 6
+
+
+
+  }}>
+<View style={styles.button}>
+
+    <Text style={styles.buttonText}>Semester 6</Text>
+  </View>              
+      </TouchableOpacity>
+<Modal
+  animationType="slide"
+  transparent={false}
+  visible={this.state.p16ces1}
+  onRequestClose={() => {
+    Alert.alert('Modal has been closed.');
+  }}>
+  <View style={{ marginTop: 22 }}>
+    <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+      <Button
+        title='close'
+
+        onPress={() => {
+          this.setState({ p16ees1: false });
+        }}>
+        >
+
+
+</Button>
+      <Pdf
+        source={this.state.p16cesem}
+        onLoadComplete={(numberOfPages, filePath) => {
+          console.log(`number of pages: ${numberOfPages}`);
+        }}
+        onPageChanged={(page, numberOfPages) => {
+          console.log(`current page: ${page}`);
+        }}
+        onError={(error) => {
+          console.log(error);
+        }}
+        style={styles.pdf}
+      />
+    </View>
+  </View>
+
+
+</Modal>
+</View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          {/* Curriculum */}
+          
+          
+          
+            <View style={{ padding: 10 }}>
+              <RkCard style={{ padding: 10, borderRadius: 15 }}>
+                <View rkCardHeader>
+
+                  <View>
+                    <Text>Curriculum 2011</Text>
+
+                  </View>
+                  </View>
+                  <View rkCardContent>
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p11itsem : require('./pdf/p11/p11its4.pdf')});/// not found sem 1
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 1</Text>
+                    </View>              
+                        </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p11itsem : require('./pdf/p11/p11its4.pdf')});/// not found sem 2
+
+
+
+                    }}>
+                    <Text>Semester 2</Text>
+                  </TouchableOpacity> 
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p16itsem : require('./pdf/p11/p11its4.pdf')});/// not found sem 3
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 3</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p11itsem : require('./pdf/p11/p11its4.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 4</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p16itsem : require('./pdf/p11/p11its5.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 5</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p16itsem : require('./pdf/p11/p11its5.pdf')});/// not found sem 6
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 6</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.p11its1}
+                    onRequestClose={() => {
+                      Alert.alert('Modal has been closed.');
+                    }}>
+                    <View style={{ marginTop: 22 }}>
+                      <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+                        <Button
+                          title='close'
+
+                          onPress={() => {
+                            this.setState({ p11its1: false });
+                          }}>
+                          >
+          
+          
+          </Button>
+                        <Pdf
+                          source={this.state.p11itsem}
+                          onLoadComplete={(numberOfPages, filePath) => {
+                            console.log(`number of pages: ${numberOfPages}`);
+                          }}
+                          onPageChanged={(page, numberOfPages) => {
+                            console.log(`current page: ${page}`);
+                          }}
+                          onError={(error) => {
+                            console.log(error);
+                          }}
+                          style={styles.pdf}
+                        />
+                      </View>
+                    </View>
+
+
+                  </Modal>
+                </View>
+                
+
+
+              </RkCard>
+            </View>
+
+
+{/* Instrumentation Engineering */}
+
+<View rkCardContent>
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11iss1: true ,p11issem : require('./pdf/p11/p11iss1.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 1</Text>
+                    </View>              
+                        </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ p11its1: true ,p11issem : require('./pdf/p11/p11iss2.pdf')});
+
+
+
+                    }}>
+                    <Text>Semester 2</Text>
+                  </TouchableOpacity> 
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11iss1: true ,p11issem : require('./pdf/p11/p11iss3.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 3</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11iss1: true ,p11issem : require('./pdf/p11/p11iss4.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 4</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11iss1: true ,p11issem : require('./pdf/p11/p11iss5.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 5</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11iss1: true ,p11issem : require('./pdf/p11/p11iss6.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 6</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.p11iss1}
+                    onRequestClose={() => {
+                      Alert.alert('Modal has been closed.');
+                    }}>
+                    <View style={{ marginTop: 22 }}>
+                      <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+                        <Button
+                          title='close'
+
+                          onPress={() => {
+                            this.setState({ p11iss1: false });
+                          }}>
+                          >
+          
+          
+          </Button>
+                        <Pdf
+                          source={this.state.p11issem}
+                          onLoadComplete={(numberOfPages, filePath) => {
+                            console.log(`number of pages: ${numberOfPages}`);
+                          }}
+                          onPageChanged={(page, numberOfPages) => {
+                            console.log(`current page: ${page}`);
+                          }}
+                          onError={(error) => {
+                            console.log(error);
+                          }}
+                          style={styles.pdf}
+                        />
+                      </View>
+                    </View>
+
+
+                  </Modal>
+                </View>
+                
+
+{/* Mechanical Engineering */}
+              
+
+              <View rkCardContent>
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11mes1: true ,p11itsem : require('./pdf/p11/p11mes1.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 1</Text>
+                    </View>              
+                        </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => {
+                      this.setState({ p11mes1: true ,p11mesem : require('./pdf/p11/p11mes2.pdf')});
+
+
+
+                    }}>
+                    <Text>Semester 2</Text>
+                  </TouchableOpacity> 
+                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11mes1: true ,p11mesem : require('./pdf/p11/p11mes3.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 3</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11mes1: true ,p11mesem : require('./pdf/p11/p11mes4.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 4</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11mes1: true ,p11mesem : require('./pdf/p11/p11mes5.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 5</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center" }} activeOpacity={.5}
+                    onPress={() => {
+                      this.setState({ p11mes1: true ,p11mesem : require('./pdf/p11/p11mes6.pdf')});
+
+
+
+                    }}>
+                  <View style={styles.button}>
+
+                      <Text style={styles.buttonText}>Semester 6</Text>
+                    </View>              
+                        </TouchableOpacity>
+                        <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.p11mes1}
+                    onRequestClose={() => {
+                      Alert.alert('Modal has been closed.');
+                    }}>
+                    <View style={{ marginTop: 22 }}>
+                      <View style={{ alignItems: 'center', justifyContent: 'center', }}>
+                        <Button
+                          title='close'
+
+                          onPress={() => {
+                            this.setState({ p11mes1: false });
+                          }}>
+                          >
+          
+          
+          </Button>
+                        <Pdf
+                          source={this.state.p11mesem}
+                          onLoadComplete={(numberOfPages, filePath) => {
+                            console.log(`number of pages: ${numberOfPages}`);
+                          }}
+                          onPageChanged={(page, numberOfPages) => {
+                            console.log(`current page: ${page}`);
+                          }}
+                          onError={(error) => {
+                            console.log(error);
+                          }}
+                          style={styles.pdf}
+                        />
+                      </View>
+                    </View>
+
+
+                  </Modal>
+                </View>
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </View>
+        </ScrollView>
+      </ParallaxScrollView >
+    );
+  }
+}

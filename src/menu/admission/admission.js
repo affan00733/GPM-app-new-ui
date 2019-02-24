@@ -1,7 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
-import { createStackNavigator } from 'react-navigation'
-import MainScreen from '../../../components/AppTabNavigator/HomeTab'
 import { Block, Card, Icon, Label } from '../../components';
 import { Overlay, Button } from 'react-native-elements'
 let width = Dimensions.get('window').width;

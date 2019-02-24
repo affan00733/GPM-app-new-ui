@@ -32,7 +32,7 @@ class CardComponent extends Component {
                     <Left>
                         <Thumbnail source={require('../assets/me.jpg')} />
                         <Body>
-                            <Text>principal desk </Text>
+                            <Text> Civil engineering   </Text>
                             {/* <Text note>Jan 15, 2018</Text> */}
                         </Body>
                     </Left>
@@ -59,47 +59,8 @@ class CardComponent extends Component {
 
                 <CardItem>
                     <Body>
-                        {/*  */}
-                        {/* <Card style={{ width: width * 0.70 }}>
-                            <CardItem>
-                                <Left>
-                                    <Thumbnail source={logo} />
-                                    <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>Google Devs India<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @GoogleDevsIN  •<Text>  30m</Text></Text></Text>
-                                    </Body>
-                                </Left>
-                            </CardItem>
-
-                            <CardItem cardBody>
-                                <Image
-                                    style={{
-                                        resizeMode: "cover",
-                                        width: null,
-                                        height: 150,
-                                        flex: 1
-                                    }}
-                                    source={cardImage}
-                                />
-                            </CardItem>
-
-                            <CardItem style={{ paddingVertical: 0 }}>
-                                <Left>
-                                    <Text></Text>
-                                </Left>
-                                <Body>
-
-                                </Body>
-                                <Right>
-
-                                </Right>
-                            </CardItem>
-                        </Card> */}
-                        {/* <Text>
-                            <Text style={{ fontWeight: "900" }}>varun </Text>
-                            Ea do Lorem occaecat laborum do. Minim ullamco ipsum minim eiusmod dolore cupidatat magna exercitation amet proident qui. Est do irure magna dolor adipisicing do quis labore excepteur. Commodo veniam dolore cupidatat nulla consectetur do nostrud ea cupidatat ullamco labore. Consequat ullamco nulla ullamco minim.
-                        </Text> */}
-                        {/* <Container style={{ backgroundColor: "#FFF" }}>
-            <Content padder style={{ marginTop: 5 }}> */}
+                       
+                    
                         <Card style={{ flex: 1 }}>
                             <CardItem>
                                 <Left>
@@ -118,9 +79,7 @@ class CardComponent extends Component {
 
 
                             </CardItem>
-                            {/* <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
-                            </CardItem> */}
+                         
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
                                     <Text></Text>
