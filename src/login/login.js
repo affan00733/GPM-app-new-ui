@@ -33,6 +33,9 @@ firebase.initializeApp({
     messagingSenderId: "559355718425"
   });
 export default class Login extends Component {
+    static navigationOptions = {
+        headerMode: 'none'
+        }
     constructor(props) {
         super(props)
         this.state = {
@@ -53,7 +56,7 @@ press=()=>{
     login = () => {
 const {email,password}=this.state
 
-        fetch('http://192.168.0.105/user_login.php', {
+        fetch('http://192.168.0.105/GPM/user_login.php', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -76,14 +79,15 @@ const {email,password}=this.state
 
                     // console.log(responseJson);
                     // Alert.alert('');
-                    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                        // Handle Errors here.
-                        var errorCode = error.code;
-                        var errorMessage = error.message;
-                        Alert.alert('Incorrect login')
+                    firebase.auth().signInWithEmailAndPassword(email, password)
+                    // .catch(function(error) {
+                    //     // Handle Errors here.
+                    //     var errorCode = error.code;
+                    //     var errorMessage = error.message;
+                    //     Alert.alert('Incorrect login')
 
-                        // ...
-                      });
+                    //     // ...
+                    //   });
                     this.setState({response : responseJson[0]})
                     console.log(this.state.response)
                     ToastAndroid.showWithGravityAndOffset(
@@ -93,9 +97,8 @@ const {email,password}=this.state
                         25,
                         50,
                       );
-                    //   console.log(responseJson.enroll)
                     //Then open Profile activity and send user email to profile activity.
-                    this.props.navigation.navigate('Dr2',{ 
+                    this.props.navigation.navigate('Feature',{ 
                         Enroll: this.state.response.enroll ,
                         Name :  this.state.response.name ,
                         Email  :this.state.response.email,
@@ -118,6 +121,7 @@ const {email,password}=this.state
                         25,
                         50,
                       );
+                      console.log(responseJson)
                     // Alert.alert(responseJson);
                 }
 

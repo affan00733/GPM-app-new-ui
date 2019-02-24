@@ -21,6 +21,7 @@ import { Block, Card, Icon, Label } from '../components';
 import Login  from '../login/login'
 import Signup  from '../login/signup'
 
+import Feature from '../features/feature'
 const homeNav = createStackNavigator({
     home : {
         screen : home
@@ -86,7 +87,7 @@ const Dr = createDrawerNavigator({
     });
 
 
-// const Dr2 = createDrawerNavigator({
+// const St2 = createDrawerNavigator({
 //     Concession: { screen: Concession },
 //     Graph: { screen: Graph },
 //     Portal: { screen: Portal },
@@ -101,6 +102,7 @@ const Dr = createDrawerNavigator({
 const St = createStackNavigator({
     Login: { screen: Login },
     Signup: { screen: Signup },
+    Feature : {screen : Feature}
     // Dr2 : Dr2,
     // Dr1 : Dr
 
@@ -109,7 +111,7 @@ const St = createStackNavigator({
         navigationOptions: ({ navigation }) => ({
 
         }),
-        headerMode: 'none'
+        // headerMode: 'none'
     })
 
 const Sw = createSwitchNavigator({
