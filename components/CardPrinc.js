@@ -118,9 +118,9 @@ class CardPrinc extends Component {
 
 
                             </CardItem>
-                            {/* <CardItem cardBody style={{ paddingLeft: 10 }}>
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
                                 <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
-                            </CardItem> */}
+                            </CardItem>
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
                                     <Text></Text>
@@ -134,7 +134,7 @@ class CardPrinc extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
+                        {/* <Card style={{ flex: 1 ,width: width * 0.70}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
@@ -159,7 +159,7 @@ class CardPrinc extends Component {
 
                                 </Right>
                             </CardItem>
-                        </Card>
+                        </Card> */}
                     </Body>
                 </CardItem>
             </Card>

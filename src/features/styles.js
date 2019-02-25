@@ -1,6 +1,5 @@
 import { StyleSheet, Text, WebView, View, Linking, Button, Modal, FlatList, Dimensions, PermissionsAndroid, Alert, TouchableHighlight, TouchableOpacity } from 'react-native';
 let width = Dimensions.get('window').width;
-const offset = 24;
 
 export default styles = StyleSheet.create({
   container: { flex: 1, padding: 5, paddingTop: 10, backgroundColor: '#fff' },
@@ -141,7 +140,6 @@ export default styles = StyleSheet.create({
   inputsContainer: {
     flex: 3,
     marginTop: 50,
-    backgroundColor : 'black'
   },
   footerContainer: {
     flex: 1
@@ -169,13 +167,6 @@ export default styles = StyleSheet.create({
   },
   inputs: {
     paddingVertical: 20,
-  },
-  inputContainer: {
-    borderWidth: 1,
-    borderBottomColor: '#CCC',
-    borderColor: 'transparent',
-    flexDirection: 'row',
-    height: 75,
   },
   inputContainer: {
     borderWidth: 1,
@@ -221,22 +212,5 @@ export default styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 18,
 
-  },
-  title: {
-    marginTop: offset,
-    marginLeft: offset,
-    fontSize: offset,
-  },
-  nameInput: {
-    height: offset * 2,
-
-    margin: offset,
-    paddingHorizontal: offset,
-    borderColor: '#111111',
-    borderWidth: 1,
-  },
-  buttonText: {
-    marginLeft: offset,
-    fontSize: offset,
-  },
+  }
   });
