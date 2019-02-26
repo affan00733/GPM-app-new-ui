@@ -6,9 +6,9 @@ export default styles = StyleSheet.create({
   container: { flex: 1, padding: 5, paddingTop: 10, backgroundColor: '#fff' },
   header: { height: 50, backgroundColor: '#537791' },
   // headerDip: { height: 30, backgroundColor: '#537791' },
-  text: { textAlign: 'center', fontWeight: '100' },
+  text: { textAlign: 'center', fontWeight: '100',fontSize : 10 },
   dataWrapper: { marginTop: -1 },
-  row: { height: 120, backgroundColor: '#E7E6E1' },
+  row: { height: 60, backgroundColor: '#E7E6E1' },
     welcome: {
       fontSize: 20,
       textAlign: 'center',

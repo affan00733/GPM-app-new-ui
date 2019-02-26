@@ -70,6 +70,7 @@ export default class Gallery extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
         >
           <Portal />
         </Overlay>
