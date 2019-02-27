@@ -218,7 +218,7 @@ export default styles = StyleSheet.create({
     color: '#D8D8D8'
   },
   whiteFont: {
-    color: '#FFF',
+    color: 'black',
     fontSize: 18,
 
   },

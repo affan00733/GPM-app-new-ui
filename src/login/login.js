@@ -98,7 +98,7 @@ const {email,password}=this.state
                         50,
                       );
                     //Then open Profile activity and send user email to profile activity.
-                    this.props.navigation.navigate('Feature',{ 
+                    this.props.navigation.navigate('St2',{ 
                         Enroll: this.state.response.enroll ,
                         Name :  this.state.response.name ,
                         Email  :this.state.response.email,

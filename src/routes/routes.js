@@ -87,21 +87,25 @@ const Dr = createDrawerNavigator({
     });
 
 
-
-
+    const St2 = createStackNavigator({
+        Feature : {screen : Feature}
+    
+    
+    }, {
+        })
+    
 const St = createStackNavigator({
-    Login: { screen: Login },
+    Login: { screen: Login 
+   },
     Signup: { screen: Signup },
-    Feature : {screen : Feature}
-    // Dr2 : Dr2,
-    // Dr1 : Dr
+  St2 : St2
 
 }, {
         initialRouteName: 'Login',
         navigationOptions: ({ navigation }) => ({
 
         }),
-        // headerMode: 'none'
+        headerMode: 'none'
     })
 
 const Sw = createSwitchNavigator({

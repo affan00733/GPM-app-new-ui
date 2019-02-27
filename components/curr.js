@@ -4,18 +4,34 @@ import {
     Text,
     StyleSheet,
     Image,
-    Dimensions
+    Dimensions,
+    Picker
 } from "react-native";
+import { Overlay, Button } from 'react-native-elements'
+import Pdf from 'react-native-pdf';
 
-import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
+import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Icon } from 'native-base'
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
+import styles from '../src/styles/styles'
 
 const logo1 = require("./images/mkbhd.jpg");
 
 class CardComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            isVisiblepdf: false,
+            source: '',
+            dept: '',
+            sem: ''
+
+
+
+        }
+    }
 
     render() {
 
@@ -38,19 +54,10 @@ class CardComponent extends Component {
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} />
+                    {/* <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} /> */}
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
-                            <Icon name="ios-heart-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
 
 
                     </Left>
@@ -59,27 +66,97 @@ class CardComponent extends Component {
 
                 <CardItem>
                     <Body>
-                       
-                    
-                        <Card style={{ flex: 1 }}>
+
+
+                    <Card style={{ flex: 1 ,width: width * 0.70}}>
+                            <Overlay
+                                isVisible={this.state.isVisiblepdf}
+                                onBackdropPress={() => this.setState({ isVisiblepdf: false })}
+                                windowBackgroundColor="rgba(255, 255, 255, .5)"
+                                // overlayBackgroundColor="red"
+                                width={width * 0.85}
+                                height={height * 0.85}
+                                // fullScreen = {true}
+                            >
+                                <Pdf
+                                    source={{ uri: `http://192.168.0.104/GPM/pdf/p16/p16${this.state.dept}${this.state.sem}.pdf` }}
+                                    onLoadComplete={(numberOfPages, filePath) => {
+                                        console.log(`number of pages: ${numberOfPages}`);
+                                    }}
+                                    onPageChanged={(page, numberOfPages) => {
+                                        console.log(`current page: ${page}`);
+                                    }}
+                                    onError={(error) => {
+                                        console.log(error);
+                                    }}
+                                    style={styles.pdf}
+                                />
+                            </Overlay>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Curriculm<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
                                     </Body>
                                 </Left>
                             </CardItem>
+
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
+
+                                <Picker
+                                    selectedValue={this.state.dept}
+                                    style={[styles.input, styles.whiteFont, { color: 'black', paddingTop: 13, marginTop: 12 }]}
+                                    onValueChange={(itemValue, itemIndex) => this.setState({ dept: itemValue })}
+                                    prompt='Department'
+                                >
+
+                                    <Picker.Item label="Civil Engineering" value="ce" />
+                                    <Picker.Item label="Computer Engineering" value="co" />
+                                    <Picker.Item label="Electrical Engineering" value="ee" />
+                                    <Picker.Item label="Electronics Engineering" value="ec" />
+                                    <Picker.Item label="Information Technology" value="it" />
+                                    <Picker.Item label="Instrumentation Engineering" value="is" />
+                                    <Picker.Item label="Rubber Technology" value="rb" />
+                                    <Picker.Item label="Leather Technology" value="lt" />
+                                    <Picker.Item label="Mechanical Engineering" value="me" />
+
+
+
+                                </Picker>
 
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text> Government Polytechnic Mumbai is an autonomous institute of Government of Maharashtra. Recently in 2010, we have celebrated Golden Jubilee of the institute.{'\n\n'}We have a team of highly qualified, experienced and dedicated faculties and non-teaching staff who are devoted to achieve excellence in the every activity of the institute. We own an excellent infrastructure, well equipped engineering departments, libraries, training and Placement cell, class rooms, seminar rooms and Auditorium Hall etc. {'\n\n'}The synergic efforts taken at the institute will help to achieve the vision of the institute and  make our student globally competitive entrepreneurs and employable engineers. This will ultimately help to transform them into a knowledge pool for India.</Text>
 
+                                <Picker
+                                    selectedValue={this.state.sem}
+                                    style={[styles.input, styles.whiteFont, { color: 'black', paddingTop: 13, marginTop: 12 }]}
+                                    onValueChange={(itemValue, itemIndex) => this.setState({ sem: itemValue })}
+                                    prompt='Semister'
+                                >
+
+                                    <Picker.Item label="sem 1" value="s1" />
+                                    <Picker.Item label="sem 2" value="s2" />
+                                    <Picker.Item label="sem 3" value="s3" />
+                                    <Picker.Item label="sem 4" value="s4" />
+                                    <Picker.Item label="sem 5" value="s5" />
+                                    <Picker.Item label="sem 6" value="s6" />
+
+
+
+
+                                </Picker>
 
                             </CardItem>
-                         
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                                <View style={{ width: width * 0.47, paddingLeft: width * 0.05, paddingTop: width * 0.05 }}>
+                                    <Button
+                                        title="submit"
+                                        type="outline"
+                                        onPress={() => this.setState({ isVisiblepdf: true })}
+                                    />
+                                </View>
+
+                            </CardItem>
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
                                     <Text></Text>
@@ -93,32 +170,7 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
-                            <CardItem>
-                                <Left>
-                                    <Thumbnail source={logo1} />
-                                    <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
-                                    </Body>
-                                </Left>
-                            </CardItem>
-                           
-                          
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
-                            </CardItem>
-                            <CardItem style={{ paddingVertical: 0 }}>
-                                <Left>
-                                    <Text></Text>
-                                </Left>
-                                <Body>
 
-                                </Body>
-                                <Right>
-
-                                </Right>
-                            </CardItem>
-                        </Card>
                     </Body>
                 </CardItem>
             </Card>
@@ -127,10 +179,10 @@ class CardComponent extends Component {
 }
 export default CardComponent;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     }
+// });
