@@ -4,19 +4,208 @@ import {
     Text,
     StyleSheet,
     Image,
-    Dimensions
+    Dimensions,
+    Button,
+    Animated, ScrollView, Picker, ToastAndroid, WebView, Linking, Modal, FlatList, PermissionsAndroid, Alert, TouchableHighlight, TouchableOpacity
+
 } from "react-native";
 
-import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
+import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Icon } from 'native-base'
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
+import RadioForm from 'react-native-radio-form';
+import styles from '../src/styles/styles'
+let teachArr = []
+
+const mockData = [
+    {
+        label: 'worst',
+        value: 25
+    },
+    {
+        label: 'good',
+        value: 50
+    },
+    {
+        label: 'better',
+        value: 75
+    },
+    {
+        label: 'best',
+        value: 100
+    }
+];
+let deviceHeight = Dimensions.get('window').height;
 let width = Dimensions.get('window').width;
-let height = Dimensions.get('window').height;
+
 
 const logo1 = require("./images/mkbhd.jpg");
-
+// name={} email={} enroll={}  
 class CardComponent extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: [],
+            teacher: [],
+            value1: 0,
+            question: '',
+            answer: 0,
+            radio: 0,
+            checked: 'first',
+            feedback: '',
+            questionName: '',
+            index: 0,
+            item: 25,
+            buttonVal: 'begin test',
+            name: this.props.name,
 
+            email: this.props.email,
+            enroll: this.props.enroll,
+            teacherName: ''
+
+        }
+    }
+
+    async componentWillMount() {
+        const response = await fetch("http://192.168.0.104/GPM/question_disp.php");
+        const json = await response.json();
+        this.setState({ data: json });
+        const responseTeac = await fetch("http://192.168.0.104/GPM/teacher.php");
+        const jsonTeach = await responseTeac.json();
+        console.log(jsonTeach)
+        this.setState({ teacherName: jsonTeach[0].teacher });
+        for (let i = 0; i <= jsonTeach.length - 1; i++) {
+            let val = jsonTeach[i].teacher
+          
+                console.log(val)
+                teachArr.push(val)
+                this.setState({ teacher: teachArr })
+            
+            // teachArr=[];
+           
+
+        }
+        teachArr=[];
+        console.log(this.state.teacher)
+        //  this.setState({questionName: this.state.data[this.state.index].question})
+
+        //      this.setState({ questionName: this.state.data[0] });
+
+    }
+
+
+    fetchR = async () => {
+
+
+
+        console.log()
+        // console.log(this.props.navigation.state.params.Email)
+        // console.log(this.props.navigation.state.params.Enroll)
+        console.log(json)
+
+
+
+    };
+
+    getData = () => {
+        this.setState({ buttonVal: 'next' })
+
+        console.log(this.state.questionName)
+        if (this.state.index <= this.state.data.length - 1) {
+            // console.log(this.state.questionName)
+            // console.log(this.state.questionName.question)
+
+            if (this.state.index == this.state.data.length) {
+                Alert.alert('submited')
+
+            }
+
+            else {
+
+                this.setState({ index: this.state.index + 1 })
+                this.setState({ questionName: this.state.data[this.state.index].question })
+                // Alert.alert(`${this.state.questionName} value is ${this.state.item}`)
+                if (this.state.questionName != '') {
+                    console.log(`${this.state.questionName} value is ${this.state.item}`)
+                    fetch('http://192.168.0.104/GPM/answer.php', {
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            name: this.state.name,
+                            email: this.state.email,
+                            enroll: this.state.enroll,
+                            questionName: this.state.questionName,
+                            answer: this.state.item,
+                            teacherName: this.state.teacherName
+
+                        })
+
+                    }).then((response) => response.json())
+                        .then((responseJson) => {
+
+                            // Showing response message coming from server after inserting records.
+                            // Alert.alert(resposnseJson);
+                            ToastAndroid.showWithGravityAndOffset(
+                                responseJson,
+                                ToastAndroid.LONG,
+                                ToastAndroid.BOTTOM,
+                                25,
+                                50,
+                            );
+                        }).catch((error) => {
+                            console.error(error);
+                        });
+                }
+            }
+        }
+        else {
+            this.setState({ buttonVal: 'finish' })
+
+            console.log(`${this.state.questionName} value is ${this.state.item}`)
+            fetch('http://192.168.0.104/GPM/answer.php', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: this.state.name,
+                    email: this.state.email,
+                    enroll: this.state.enroll,
+                    questionName: this.state.questionName,
+                    answer: this.state.item,
+                    teacherName: this.state.teacherName
+
+
+                })
+
+            }).then((response) => response.json())
+                .then((responseJson) => {
+
+                    // Showing response message coming from server after inserting records.
+                    // Alert.alert(resposnseJson);
+                    ToastAndroid.showWithGravityAndOffset(
+                        responseJson,
+                        ToastAndroid.LONG,
+                        ToastAndroid.BOTTOM,
+                        25,
+                        50,
+                    );
+                }).catch((error) => {
+                    console.error(error);
+                });
+            Alert.alert('COMPLETED')
+        }
+
+    }
+
+    _onSelect = (item) => {
+        console.log(item.value);
+        this.setState({ item: item.value })
+    };
     render() {
 
         const images = {
@@ -42,7 +231,7 @@ class CardComponent extends Component {
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                      
+
 
 
                     </Left>
@@ -51,24 +240,33 @@ class CardComponent extends Component {
 
                 <CardItem>
                     <Body>
-                       
-                    
-                    <Card style={{ flex: 1 ,width: width * 0.70}}>
+
+
+                        <Card style={{ flex: 1, width: width * 0.70 }}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam</Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Feedback form</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
-                          
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text> Government Polytechnic Mumbai is an autonomous institute of Government of Maharashtra. Recently in 2010, we have celebrated Golden Jubilee of the institute.{'\n\n'}We have a team of highly qualified, experienced and dedicated faculties and non-teaching staff who are devoted to achieve excellence in the every activity of the institute. We own an excellent infrastructure, well equipped engineering departments, libraries, training and Placement cell, class rooms, seminar rooms and Auditorium Hall etc. {'\n\n'}The synergic efforts taken at the institute will help to achieve the vision of the institute and  make our student globally competitive entrepreneurs and employable engineers. This will ultimately help to transform them into a knowledge pool for India.</Text>
 
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+
+                                <Picker
+                                    selectedValue={this.state.teacherName}
+                                    style={{ height: 50, width: 100 }}
+                                    onValueChange={(itemValue, itemIndex) =>
+                                        this.setState({ teacherName: itemValue })
+                                    }>
+                                    {this.state.teacher.map((item, index) => {
+                                        return (<Picker.Item label={item} value={item} key={item} />)
+                                    })}
+                                </Picker>
 
                             </CardItem>
-                         
+
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
                                     <Text></Text>
@@ -82,7 +280,58 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                      
+                        <Card style={{ flex: 1, width: width * 0.70 }}>
+                            <CardItem>
+                                <Left>
+                                    <Thumbnail source={logo1} />
+                                    <Body>
+                                        <Text style={{ fontWeight: 'bold' }}>Feedback form</Text>
+                                    </Body>
+                                </Left>
+                            </CardItem>
+
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+
+                                <Text>{this.state.questionName}</Text>
+                            </CardItem>
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+
+                                <RadioForm
+                                    style={{ width: 350 - 30 }}
+                                    dataSource={mockData}
+                                    itemShowKey="label"
+                                    itemRealKey="value"
+                                    circleSize={16}
+                                    initial={0}
+                                    formHorizontal={true}
+                                    labelHorizontal={true}
+                                    onPress={(item) => this._onSelect(item)}
+                                />
+                            </CardItem>
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+
+                                <View style={{ justifyContent: 'center', alignContent: 'center' }}>
+                                    <Button
+
+                                        title={this.state.buttonVal}
+                                        onPress={() => this.getData()}
+                                    />
+                                </View>
+
+                            </CardItem>
+
+                            <CardItem style={{ paddingVertical: 0 }}>
+                                <Left>
+                                    <Text></Text>
+                                </Left>
+                                <Body>
+
+                                </Body>
+                                <Right>
+
+                                </Right>
+                            </CardItem>
+                        </Card>
                     </Body>
                 </CardItem>
             </Card>
@@ -91,10 +340,10 @@ class CardComponent extends Component {
 }
 export default CardComponent;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     }
+// });

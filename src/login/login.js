@@ -56,7 +56,7 @@ press=()=>{
     login = () => {
 const {email,password}=this.state
 
-        fetch('http://192.168.43.64/GPM/user_login.php', {
+        fetch('http://192.168.0.104/GPM/user_login.php', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

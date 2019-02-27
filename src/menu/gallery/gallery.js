@@ -1,12 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
-
+import { StyleSheet, Text, View, TouchableOpacity,Modal, Dimensions } from 'react-native';
+import Pdf from 'react-native-pdf';
+import styles from '../../styles/styles'
 import { Block, Card, Icon, Label } from '../../components';
 import { Overlay, Button } from 'react-native-elements'
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 import GalleryClick from './options/galleryClick'
-export default class Gallery extends React.Component {
+import Gallery from 'react-native-image-gallery';
+
+export default class GalleryMain extends React.Component {
   static navigationOptions = {
    
     headerTitle: (
@@ -16,7 +19,11 @@ export default class Gallery extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isVisibleGalleryClick: false
+      isVisibleGalleryClick: false,
+      source : '',
+
+    
+
     }
   }
 
@@ -30,9 +37,22 @@ export default class Gallery extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
-        >
-          <GalleryClick />
-        </Overlay>
+          // fullScreen={true}
+   
+ >
+         <Gallery
+        style={{ flex: 1, backgroundColor: 'black' }}
+        images={[
+          // { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
+          { source: { uri: 'http://i.imgur.com/XP2BE7q.jpg' } },
+          { source: { uri: 'http://i.imgur.com/5nltiUd.jpg' } },
+          { source: { uri: 'http://i.imgur.com/6vOahbP.jpg' } },
+          { source: { uri: 'http://i.imgur.com/kj5VXtG.jpg' } }
+        ]}
+      />
+          {/* <GalleryClick /> */}
+         
+</Overlay>
         <View>
         <View style={{ flexDirection: 'row' }}
         >
@@ -54,11 +74,11 @@ export default class Gallery extends React.Component {
 }
 
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });

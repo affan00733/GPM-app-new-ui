@@ -74,8 +74,20 @@ class HomeTab extends Component {
                             </ScrollView>
                         </View>
                     </View>
-                    <CardComponent imageSource="1" likes="101" />
-                   
+                    <CardComponent
+                        name={this.props.name}
+                        email={this.props.email}
+                        enroll={this.props.enroll}
+
+                        year={this.props.year}
+                        dept={this.props.dept}
+                        shift={this.props.shift}
+                        mobile={this.props.mobile}
+                        address={this.props.address}
+                        gender={this.props.gender}
+                        dob={this.props.dob}
+                        imageSource="1" likes="101" />
+
                 </Content>
             </Container>
         );

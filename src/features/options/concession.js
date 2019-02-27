@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from 'react-navigation'
 import MainScreen from '../../../components/AppTabNavigator/concession'
 // import { Block, Card, Icon, Label } from '../../../components';
@@ -7,10 +7,23 @@ import MainScreen from '../../../components/AppTabNavigator/concession'
 export default class Concession extends React.Component {
 
   render() {
-    console.log('Concession')    
+    console.log('Concession')
 
     return (
-      <AppStackNavigator />
+      <MainScreen
+        name={this.props.name}
+        email={this.props.email}
+        enroll={this.props.enroll}
+
+        year={this.props.year}
+        dept={this.props.dept}
+        shift={this.props.shift}
+        mobile={this.props.mobile}
+        address={this.props.address}
+        gender={this.props.gender}
+        dob={this.props.dob}
+
+      />
     );
   }
 
@@ -21,9 +34,9 @@ const AppStackNavigator = createStackNavigator({
   Main: {
     screen: MainScreen
   }
-},{
-  headerMode : 'none'
-})
+}, {
+    headerMode: 'none'
+  })
 
 
 const styles = StyleSheet.create({

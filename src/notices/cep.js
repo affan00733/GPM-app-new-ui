@@ -29,7 +29,7 @@ export default class Cep extends Component {
     // this.UserRegistrationFunction()
   }
   fetchData = async () => {
-    const response = await fetch("http://192.168.0.105/GPM/notices/cep.php");
+    const response = await fetch("http://192.168.0.104/GPM/notices/cep.php");
     const json = await response.json();
 
     this.setState({ link: json });
@@ -125,7 +125,7 @@ export default class Cep extends Component {
                 onPress={() => {
                   this.setState({ modalVisible: true });
                   this.setState({ name: item.link })
-                  this.setState({ source: { uri: `http://192.168.0.105/Admin/pages/notices/pdf/${item.filename}` } })
+                  this.setState({ source: { uri: `http://192.168.0.104/Admin/pages/notices/pdf/${item.filename}` } })
                   console.log(this.state.source)
 
                 }}>

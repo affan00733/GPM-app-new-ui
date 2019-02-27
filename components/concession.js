@@ -3,7 +3,7 @@ import {
     View,
     Text,
     StyleSheet,
-    
+
     Dimensions,
     Animated,
     Picker,
@@ -61,7 +61,7 @@ class CardComponent extends Component {
             from: '',
             to: '',
             clas: 'First',
-            period: 'I month\'s',
+            period: 'I month',
 
 
 
@@ -74,23 +74,22 @@ class CardComponent extends Component {
     }
 
     fetchData = () => {
-        console.log(this.props.navigation.state.params.Name)
-        console.log(this.props.navigation.state.params.Email)
-        console.log(this.props.navigation.state.params.Enroll)
-        const { from, to, period, clas } = this.state
-        this.setState({ enroll: this.props.navigation.state.params.Enroll, name: this.props.navigation.state.params.Name, email: this.props.navigation.state.params.Email })
-        let name = this.props.navigation.state.params.Name
-        let email = this.props.navigation.state.params.Email
-        let enroll = this.props.navigation.state.params.Enroll
-        let year = this.props.navigation.state.params.year
-        let dept = this.props.navigation.state.params.dept
-        let shift = this.props.navigation.state.params.shift
-        let mobile = this.props.navigation.state.params.mobile
-        let address = this.props.navigation.state.params.address
-        let gender = this.props.navigation.state.params.gender
-        let dob = this.props.navigation.state.params.dob
 
-        fetch('http://192.168.43.64/upload.php', {
+        const { from, to, period, clas } = this.state
+        this.setState({ enroll: this.props.enroll, name: this.props.name, email: this.props.email })
+        let name = this.props.name
+        let email = this.props.email
+        let enroll = this.props.enroll
+        let year = this.props.year
+        let dept = this.props.dept
+        let shift = this.props.shift
+        let mobile = this.props.mobile
+        let address = this.props.address
+        let gender = this.props.gender
+        let dob = this.props.dob
+
+
+        fetch('http://192.168.0.104/GPM/upload.php', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -185,7 +184,7 @@ class CardComponent extends Component {
         let url = this.state.res; //The url you received from the DocumentPicker
         let decodedURL = decodeURIComponent(url)
 
-        let uploadUrl = 'http://192.168.43.64/moveFile.php';  // For testing purposes, go to http://requestb.in/ and create your own link
+        let uploadUrl = 'http://192.168.0.104/GPM/moveFile.php';  // For testing purposes, go to http://requestb.in/ and create your own link
 
         // I STRONGLY RECOMMEND ADDING A SMALL SETTIMEOUT before uploading the url you just got.
         const split = decodedURL.split('/');
@@ -239,7 +238,7 @@ class CardComponent extends Component {
             toUrl: uploadUrl,
             files: [{
                 name: 'pdf',
-                filename: `${this.props.navigation.state.params.Enroll}.pdf`,
+                filename: `${this.props.enroll}.pdf`,
                 filepath: realPath,
             }],
             method: 'POST',
@@ -331,7 +330,7 @@ class CardComponent extends Component {
                     <Body>
 
 
-                    <Card style={{ flex: 1 ,width: width * 0.70}}>
+                        <Card style={{ flex: 1, width: width * 0.70 }}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
@@ -422,7 +421,7 @@ class CardComponent extends Component {
                                             prompt='Period'
                                         >
 
-                                            <Picker.Item label="I month's" value="I month's" />
+                                            <Picker.Item label="I month" value="I month" />
                                             <Picker.Item label="Quaterly" value="Quaterly" />
                                         </Picker>
                                     </View>
@@ -443,7 +442,7 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
+                        <Card style={{ flex: 1, width: width * 0.70 }}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
@@ -458,23 +457,23 @@ class CardComponent extends Component {
                             </CardItem> */}
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
 
-                            <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}
-                    onPress={() => this._pickDocument()}
-                  >
-                    <View style={styles.button}>
-                      <Text style={styles.buttonText}>Choose</Text>
-                    </View>
-                  </TouchableOpacity>
-</CardItem>
-                  <CardItem cardBody style={{ paddingLeft: 10 }}>
+                                <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}
+                                    onPress={() => this._pickDocument()}
+                                >
+                                    <View style={styles.button}>
+                                        <Text style={styles.buttonText}>Choose</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </CardItem>
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
 
-                  <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}
-                    onPress={() => this.uploadPic()}
-                  >
-                    <View style={styles.button}>
-                      <Text style={styles.buttonText}>Upload</Text>
-                    </View>
-                  </TouchableOpacity>
+                                <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}
+                                    onPress={() => this.uploadPic()}
+                                >
+                                    <View style={styles.button}>
+                                        <Text style={styles.buttonText}>Upload</Text>
+                                    </View>
+                                </TouchableOpacity>
 
                             </CardItem>
 

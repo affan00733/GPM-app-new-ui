@@ -11,13 +11,12 @@ import CardComponent from '../feedbck'
 
 class HomeTab extends Component {
 
-    static navigationOptions = {
+ 
+    constructor(props){
+        super(props)
 
-        tabBarIcon: ({ tintColor }) => (
-            <Icon name="ios-home" style={{ color: tintColor }} />
-        )
+
     }
-
     render() {
         return (
             <Container style={styles.container}>
@@ -74,8 +73,8 @@ class HomeTab extends Component {
                             </ScrollView>
                         </View>
                     </View>
-                    <CardComponent imageSource="1" likes="101" />
-                   
+                    <CardComponent  name={this.props.name} email={this.props.email} enroll={this.props.enroll}    imageSource="1" likes="101" />
+                   {/* <Text>{this.props.value}</Text> */}
                 </Content>
             </Container>
         );

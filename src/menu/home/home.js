@@ -3,16 +3,18 @@ import {
     TouchableOpacity, Image, SafeAreaView, ScrollView, StyleSheet,
     View,
     // Text,
-
+    Alert,
     TextInput,
     Platform,
     StatusBar,
     // ScrollView,
     // Image,
     Dimensions,
-    Animated
+    Animated,
 } from 'react-native';
+import { Overlay } from 'react-native-elements'
 
+import Curriclum from '../student section/options/curr'
 import { Block, Card, Text, Icon, Label } from '../../components';
 import * as theme from '../../constants/theme'
 import Icon1 from 'react-native-vector-icons/Ionicons'
@@ -53,7 +55,7 @@ class Home extends Component {
         super(props)
 
         this.state = {
-
+            isVissibleGallery: false
         }
     }
 
@@ -96,7 +98,7 @@ class Home extends Component {
         return (
             <SafeAreaView style={styles.overview}>
                 <View style={{ flex: 1 }}>
-                    <Animated.View style={{ height: this.animatedHeaderHeight, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
+                    {/* <Animated.View style={{ height: this.animatedHeaderHeight, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
                         <View style={{
                             flexDirection: 'row', padding: 10,
                             backgroundColor: 'white', marginHorizontal: 20,
@@ -120,8 +122,8 @@ class Home extends Component {
                             <Tag name="Guests" />
                             <Tag name="Dates" />
 
-                        </Animated.View>
-                    </Animated.View>
+                        </Animated.View> 
+                    </Animated.View> */}
                     <ScrollView
                         scrollEventThrottle={16}
                         onScroll={Animated.event(
@@ -132,7 +134,7 @@ class Home extends Component {
                     >
                         <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-                                What can we help you find, Varun?
+                                Recent Tab's
                             </Text>
 
                             <View style={{ height: 130, marginTop: 20 }}>
@@ -140,9 +142,23 @@ class Home extends Component {
                                     horizontal={true}
                                     showsHorizontalScrollIndicator={false}
                                 >
-                                    <Category imageUri={require('./assets/home.jpg')}
-                                        name="Home"
-                                    />
+                                    <Overlay
+                                        isVisible={this.state.isVissibleGallery}
+                                        onBackdropPress={() => this.setState({ isVissibleGallery: false })}
+                                        windowBackgroundColor="rgba(255, 255, 255, .5)"
+                                        // overlayBackgroundColor="red"
+                                        width={width * 0.85}
+                                        height={height * 0.85}
+                                    >
+                                        <Curriclum />
+                                    </Overlay>
+                                    <TouchableOpacity
+                                        onPress={() => this.setState({ isVissibleGallery: true })}
+                                    >
+                                        <Category imageUri={require('./assets/home.jpg')}
+                                            name="Home"
+                                        />
+                                    </TouchableOpacity>
                                     <Category imageUri={require('./assets/experiences.jpg')}
                                         name="Experiences"
                                     />
@@ -153,21 +169,29 @@ class Home extends Component {
                             </View>
                             <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
                                 <Text style={{ fontSize: 24, fontWeight: '700' }}>
-                                    Introducing Airbnb Plus
+                                    Government Polytechnic Mumbai Autonomous Institute
                                 </Text>
-                                <Text style={{ fontWeight: '100', marginTop: 10 }}>
-                                    A new selection of homes verified for quality & comfort
 
-                                </Text>
                                 <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                                     <Image
                                         style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
-                                        source={require('./assets/home.jpg')}
+                                        source={{uri : 'http://192.168.0.104/GPM/images/img09.jpg'}}
                                     />
 
                                 </View>
                             </View>
                         </View>
+                        <View style={{ paddingVertical: 25, marginBottom: 40 }}>
+                            <Card row middle style={styles.margin}>
+                              
+                                <Block>
+                                    <Text paragraph color="black3">
+                                        All cars are operating well.
+                                        There were 1,233 trips since your last login.
+              </Text>
+                                </Block>
+                            </Card>
+                            </View>
                         <View style={{ marginTop: 40, marginBottom: 40 }}>
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
                                 Homes around the world
@@ -199,53 +223,7 @@ class Home extends Component {
                             </View>
                         </View>
                         <View style={{ paddingVertical: 25, marginBottom: 40 }}>
-                            <Card row middle style={styles.margin}>
-                                <Block flex={1.2} center middle style={{ marginRight: 20 }}>
-                                    <Text light height={43} size={36} spacing={-0.45}>86</Text>
-                                    <Text ligth caption center style={{ paddingHorizontal: 16, marginTop: 3 }}>
-                                        OPERATING SCORE
-              </Text>
-                                </Block>
-                                <Block>
-                                    <Text paragraph color="black3">
-                                        All cars are operating well.
-                                        There were 1,233 trips since your last login.
-              </Text>
-                                </Block>
-                            </Card>
-
-                            <Block row style={[styles.margin, { marginTop: 18 }]}>
-                                <Card middle style={{ marginRight: 7 }}>
-                                    <Icon vehicle />
-                                    <Text h2 style={{ marginTop: 17 }}>1,428</Text>
-                                    <Text paragraph color="gray">Vehicles on track</Text>
-                                </Card>
-
-                                <Card middle style={{ marginLeft: 7 }}>
-                                    <Icon distance />
-                                    <Text h2 style={{ marginTop: 17 }}>158.3</Text>
-                                    <Text paragraph color="gray">Distance driven</Text>
-                                </Card>
-                            </Block>
-
-                            <Card
-                                title="TODAY'S TRIPS"
-                                style={[styles.margin, { marginTop: 18 }]}
-                            >
-                                <Block row right>
-                                    <Block flex={2} row center right>
-                                        <Label blue />
-                                        <Text paragraph color="gray">Today</Text>
-                                    </Block>
-                                    <Block row center right>
-                                        <Label purple />
-                                        <Text paragraph color="gray">Yesterday</Text>
-                                    </Block>
-                                </Block>
-                                <Block>
-                                    <Text>Chart</Text>
-                                </Block>
-                            </Card>
+          
 
                             <Card
                                 title="TOP DRIVERS"
@@ -316,30 +294,7 @@ class Home extends Component {
                             </Card>
 
 
-                            <Card
-                                title="TRIPS BY TYPE"
-                                style={[styles.margin, { marginTop: 18 }]}
-                            >
-                                <Block>
-                                    <Text>Chart</Text>
-                                </Block>
-                                <Block row space="between" style={{ marginTop: 25 }}>
-                                    <Block>
-                                        <Text h2 light>1,744</Text>
-                                        <Block row center>
-                                            <Label blue />
-                                            <Text paragraph color="gray">Confort</Text>
-                                        </Block>
-                                    </Block>
-                                    <Block>
-                                        <Text h2 light>2,312</Text>
-                                        <Block row center>
-                                            <Label purple />
-                                            <Text paragraph color="gray">Premium</Text>
-                                        </Block>
-                                    </Block>
-                                </Block>
-                            </Card>
+                           
                         </View>
                     </ScrollView>
 

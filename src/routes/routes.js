@@ -87,16 +87,6 @@ const Dr = createDrawerNavigator({
     });
 
 
-// const St2 = createDrawerNavigator({
-//     Concession: { screen: Concession },
-//     Graph: { screen: Graph },
-//     Portal: { screen: Portal },
-//     Chat : {screen : Chat}
-
-// }, {
-//         contentComponent: SideMenu2,
-//         drawerWidth: 300
-//     })
 
 
 const St = createStackNavigator({

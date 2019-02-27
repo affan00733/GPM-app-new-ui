@@ -42,15 +42,7 @@ class CardComponent extends Component {
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
-                            <Icon name="ios-heart-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
+                        
 
 
                     </Left>
@@ -93,32 +85,7 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
-                            <CardItem>
-                                <Left>
-                                    <Thumbnail source={logo1} />
-                                    <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
-                                    </Body>
-                                </Left>
-                            </CardItem>
-                           
-                          
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
-                            </CardItem>
-                            <CardItem style={{ paddingVertical: 0 }}>
-                                <Left>
-                                    <Text></Text>
-                                </Left>
-                                <Body>
-
-                                </Body>
-                                <Right>
-
-                                </Right>
-                            </CardItem>
-                        </Card>
+                       
                     </Body>
                 </CardItem>
             </Card>
