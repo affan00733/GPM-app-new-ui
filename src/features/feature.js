@@ -8,6 +8,7 @@ let height = Dimensions.get('window').height;
 import Concession from './options/concession'
 import Feedbck from './options/feedbck'
 import Portal from './options/portal'
+import firebase from 'firebase'
 // let name = this.props.navigation.state.params.Name
 
 // let email= this.props.navigation.state.params.Email
@@ -26,7 +27,15 @@ export default class Gallery extends React.Component {
       <TouchableOpacity style={{ marginLeft: 10 }}  ><Icon menu /></TouchableOpacity>
     ),
     headerRight: (
-      <TouchableOpacity style={{ marginRight: 10 }} onPress={() => this.props.navigation.navigate('Login')} ><Icon notification /></TouchableOpacity>
+      <TouchableOpacity style={{ marginRight: 10 }} onPress={() => firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+
+        console.log('correct logout')
+
+    }).catch(function (error) {
+        // An error happened.
+        console.log(error)
+    }) }><Icon notification /></TouchableOpacity>
     ),
     headerTitle: (
       <Block row middle><Text h4>Features</Text></Block>
@@ -41,7 +50,19 @@ export default class Gallery extends React.Component {
 
     }
   }
+  logout = () => {
+    this.props.navigation.navigate('Login')
 
+    firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+
+        console.log('correct logout')
+
+    }).catch(function (error) {
+        // An error happened.
+        console.log(error)
+    });
+}
   render() {
     return (
       <View>
@@ -93,7 +114,10 @@ export default class Gallery extends React.Component {
           height={height * 0.85}
           fullScreen={true}
         >
-          <Portal />
+          <Portal 
+                     name={this.props.navigation.state.params.Name}
+
+         />
         </Overlay>
         <View>
           <View style={{ flexDirection: 'column' }}
@@ -114,7 +138,7 @@ export default class Gallery extends React.Component {
             </View>
             <View style={{ paddingLeft: width * 0.05, paddingRight: width * 0.05, paddingTop: width * 0.05, height: height * 0.05, marginBottom: width * 0.05, }}>
               <Button
-                title="Portal"
+                title="Complaint Portal"
                 type="outline"
                 onPress={() => this.setState({ isVisiblePortal: true })}
               />

@@ -65,7 +65,7 @@ export default class Signup extends Component {
 
     
 
-    fetch('http://192.168.0.104/user_registration.php', {
+    fetch('http://192.168.43.64/user_registration.php', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

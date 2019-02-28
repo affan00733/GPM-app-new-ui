@@ -42,7 +42,7 @@ class CardComponent extends Component {
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
+                        {/* <Button transparent>
                             <Icon name="ios-heart-outline" style={{ color: 'black' }} />
                         </Button>
                         <Button transparent>
@@ -50,7 +50,7 @@ class CardComponent extends Component {
                         </Button>
                         <Button transparent>
                             <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
+                        </Button> */}
 
 
                     </Left>

@@ -267,7 +267,7 @@ class Home extends Component {
                                 <View style={{ width: width - 40, height: 200, marginTop: 20 }}>
                                     <Image
                                         style={{ flex: 1, height: null, width: null, resizeMode: 'cover', borderRadius: 5, borderWidth: 1, borderColor: '#dddddd' }}
-                                        source={{ uri: 'http://192.168.0.104/GPM/images/img09.jpg' }}
+                                        source={{ uri: 'http://192.168.43.64/GPM/images/img.jpg' }}
                                     />
 
                                 </View>
@@ -313,7 +313,7 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
                         </View>
                         <View style={{ marginTop: 40, marginBottom: 40 }}>
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-                                Homes around the world
+Events
                             </Text>
                             <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                                 <HomeNew width={width}

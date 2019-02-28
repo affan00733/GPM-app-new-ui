@@ -89,7 +89,7 @@ class CardComponent extends Component {
         let dob = this.props.dob
 
 
-        fetch('http://192.168.0.104/GPM/upload.php', {
+        fetch('http://192.168.43.64/GPM/upload.php', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -184,7 +184,7 @@ class CardComponent extends Component {
         let url = this.state.res; //The url you received from the DocumentPicker
         let decodedURL = decodeURIComponent(url)
 
-        let uploadUrl = 'http://192.168.0.104/GPM/moveFile.php';  // For testing purposes, go to http://requestb.in/ and create your own link
+        let uploadUrl = 'http://192.168.43.64/GPM/moveFile.php';  // For testing purposes, go to http://requestb.in/ and create your own link
 
         // I STRONGLY RECOMMEND ADDING A SMALL SETTIMEOUT before uploading the url you just got.
         const split = decodedURL.split('/');
@@ -394,7 +394,7 @@ class CardComponent extends Component {
 
                                         <Picker
                                             selectedValue={this.state.clas}
-                                            style={[styles.input, styles.whiteFont, { color: '#FFF', paddingTop: 13, marginTop: 12 }]}
+                                            style={[styles.input, styles.whiteFont1, { color: '#FFF', paddingTop: 13, marginTop: 12 }]}
                                             onValueChange={(itemValue, itemIndex) => this.setState({ clas: itemValue })}
                                             prompt='Class'
                                         >
@@ -416,7 +416,7 @@ class CardComponent extends Component {
 
                                         <Picker
                                             selectedValue={this.state.period}
-                                            style={[styles.input, styles.whiteFont, { color: '#FFF', paddingTop: 13, marginTop: 12 }]}
+                                            style={[styles.input, styles.whiteFont1, { color: '#FFF', paddingTop: 13, marginTop: 12 }]}
                                             onValueChange={(itemValue, itemIndex) => this.setState({ period: itemValue })}
                                             prompt='Period'
                                         >

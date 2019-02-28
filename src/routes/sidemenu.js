@@ -23,57 +23,49 @@ class SideMenu extends Component {
         return (
             <View style={styles.container}>
                 <ScrollView>
-                    <View style={{borderRadius: 12,}} >
+                    <View style={{paddingBottom : height * 0.1,paddingLeft : height * 0.01,paddingTop : height * 0.02,paddingRight : height * 0.01}} >
 
                         <Image
-                            style={{ flex: 1, height: height * 0.4, width: null, borderRadius: 12,  borderWidth: 1, borderColor: '#dddddd' }}
-                            source={{ uri: 'http://192.168.0.104/GPM/images/download.jpeg' }}
-                        /></View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('home')} >home</Text>
+                            style={{  height: height * 0.25, width: null, borderRadius: 200, paddingBottom : height * 0.05, borderWidth: 1, borderColor: '#dddddd' }}
+                            source={{ uri: 'http://192.168.43.64/GPM/images/0.png' }}
+                        />
+                        </View>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('home')} >Home</Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('aboutUS')}>about us</Text>
-                    <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
-
-                        <Divider style={styles.drawerStyle} />
-                    </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('admission')}>admission</Text>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
 
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('aboutUS')}>About us</Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('department')}>department</Text>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
 
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('admission')}>Admission</Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('studentSec')}>student section</Text>
+                    <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
+
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('department')}>Department</Text>
+                    </View>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
 
 
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('studentSec')}>Student section</Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('centres')}>centres </Text>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
 
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('centres')}>Centres </Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('gallery')}>gallery </Text>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
 
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('gallery')}>Gallery </Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('alumini')}>alumini </Text>
                     <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
 
-                        <Divider style={styles.drawerStyle} />
+                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('alumini')}>Alumini </Text>
                     </View>
-                    <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('contact')}>contact </Text>
-                    <View style={{ paddingTop: height * 0.02, paddingBottom: height * 0.02 }}>
+         <View style={{paddingTop: height * 0.02,paddingBottom : height * 0.2}}>
+         <Text style={{ fontWeight: 'bold' }} onPress={this.navigateToScreen('contact')}>Contact us</Text>
 
-                        <Divider style={styles.drawerStyle} />
-                    </View>
+         </View>
                 </ScrollView>
 
             </View>

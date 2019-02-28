@@ -222,6 +222,11 @@ export default styles = StyleSheet.create({
     fontSize: 18,
 
   },
+  whiteFont1: {
+    color: 'white',
+    fontSize: 18,
+
+  },
   title: {
     marginTop: offset,
     marginLeft: offset,
@@ -240,8 +245,8 @@ export default styles = StyleSheet.create({
     fontSize: offset,
   },
   drawerStyle: {
-    height: height * 0.005, 
-    backgroundColor: 'black',
+    height: height * 0.002, 
+    backgroundColor: '#9CB4FF',
      borderRadius: 2,
     //  paddingTop : 10
   }

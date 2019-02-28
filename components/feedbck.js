@@ -67,10 +67,10 @@ class CardComponent extends Component {
     }
 
     async componentWillMount() {
-        const response = await fetch("http://192.168.0.104/GPM/question_disp.php");
+        const response = await fetch("http://192.168.43.64/GPM/question_disp.php");
         const json = await response.json();
         this.setState({ data: json });
-        const responseTeac = await fetch("http://192.168.0.104/GPM/teacher.php");
+        const responseTeac = await fetch("http://192.168.43.64/GPM/teacher.php");
         const jsonTeach = await responseTeac.json();
         console.log(jsonTeach)
         this.setState({ teacherName: jsonTeach[0].teacher });
@@ -127,7 +127,7 @@ class CardComponent extends Component {
                 // Alert.alert(`${this.state.questionName} value is ${this.state.item}`)
                 if (this.state.questionName != '') {
                     console.log(`${this.state.questionName} value is ${this.state.item}`)
-                    fetch('http://192.168.0.104/GPM/answer.php', {
+                    fetch('http://192.168.43.64/GPM/answer.php', {
                         method: 'POST',
                         headers: {
                             'Accept': 'application/json',
@@ -165,7 +165,7 @@ class CardComponent extends Component {
             this.setState({ buttonVal: 'finish' })
 
             console.log(`${this.state.questionName} value is ${this.state.item}`)
-            fetch('http://192.168.0.104/GPM/answer.php', {
+            fetch('http://192.168.43.64/GPM/answer.php', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

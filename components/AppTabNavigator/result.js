@@ -50,27 +50,26 @@ class HomeTab extends Component {
                             >
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/1.jpg')} />
+                                    source={{uri : 'https://media.giphy.com/media/d7oIySisFqif2hbCPm/giphy.gif'}} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/2.jpg')} />
+                                    source={{uri : 'https://media.giphy.com/media/fH6alNXs0dom8f9LYO/giphy.gif'}} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/3.jpg')} />
+                                    source={{uri : 'https://media.giphy.com/media/RHIqtNSkzSpNJwCjvV/giphy.gif'}} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/4.jpg')} />
+                                    source={{uri : 'https://media.giphy.com/media/OT4ZCk1Ka6Dld4c7LC/giphy.gif'}} />
 
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/5.jpg')} />
+                                    source={{uri : 'https://media.giphy.com/media/54Yh50N6UoM8U4YJu8/giphy.gif'}} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/6.jpg')} />
+                                    source={{uri : 'https://media.giphy.com/media/9OZV68toidVykxgEiH/giphy.gif'}} />
                                 <Thumbnail
                                     style={{ marginHorizontal: 5, borderColor: 'pink', borderWidth: 2 }}
-                                    source={require('../../assets/StoriesHeaderThumbnails/7.jpg')} />
-
+                                    source={{uri : 'https://media.giphy.com/media/NPIeX1SXfNMdy6E3Gc/giphy.gif'}} />
                             </ScrollView>
                         </View>
                     </View>

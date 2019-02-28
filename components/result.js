@@ -4,7 +4,8 @@ import {
     Text,
     StyleSheet,
     Image,
-    Dimensions
+    Dimensions,
+    WebView
 } from "react-native";
 
 import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
@@ -12,7 +13,7 @@ const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
-
+import styles from '../src/styles/styles'
 const logo1 = require("./images/mkbhd.jpg");
 
 class CardComponent extends Component {
@@ -38,11 +39,11 @@ class CardComponent extends Component {
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} />
+                    {/* <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} /> */}
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
+                        {/* <Button transparent>
                             <Icon name="ios-heart-outline" style={{ color: 'black' }} />
                         </Button>
                         <Button transparent>
@@ -50,7 +51,7 @@ class CardComponent extends Component {
                         </Button>
                         <Button transparent>
                             <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
+                        </Button> */}
 
 
                     </Left>
@@ -61,51 +62,25 @@ class CardComponent extends Component {
                     <Body>
                        
                     
-                        <Card style={{ flex: 1 }}>
-                            <CardItem>
-                                <Left>
-                                    <Thumbnail source={logo1} />
-                                    <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
-                                    </Body>
-                                </Left>
-                            </CardItem>
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
-
-                            </CardItem>
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text> Government Polytechnic Mumbai is an autonomous institute of Government of Maharashtra. Recently in 2010, we have celebrated Golden Jubilee of the institute.{'\n\n'}We have a team of highly qualified, experienced and dedicated faculties and non-teaching staff who are devoted to achieve excellence in the every activity of the institute. We own an excellent infrastructure, well equipped engineering departments, libraries, training and Placement cell, class rooms, seminar rooms and Auditorium Hall etc. {'\n\n'}The synergic efforts taken at the institute will help to achieve the vision of the institute and  make our student globally competitive entrepreneurs and employable engineers. This will ultimately help to transform them into a knowledge pool for India.</Text>
-
-
-                            </CardItem>
-                         
-                            <CardItem style={{ paddingVertical: 0 }}>
-                                <Left>
-                                    <Text></Text>
-                                </Left>
-                                <Body>
-
-                                </Body>
-                                <Right>
-
-                                </Right>
-                            </CardItem>
-                        </Card>
+                
                         {/*  */}
                         <Card style={{ flex: 1 ,width: width * 0.70}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Result</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
                            
                           
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
+                            <WebView
+          source={{ uri: 'http://www.gpmumbai.ac.in/Result.aspx' }}
+          style={styles.web}
+
+        />
                             </CardItem>
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
@@ -127,10 +102,10 @@ class CardComponent extends Component {
 }
 export default CardComponent;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     }
+// });
