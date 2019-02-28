@@ -249,5 +249,30 @@ export default styles = StyleSheet.create({
     backgroundColor: '#9CB4FF',
      borderRadius: 2,
     //  paddingTop : 10
+  },
+  drawerHeader: {
+    height: height * 0.3,
+    // backgroundColor: 'white'
+  },
+  drawerImage: {
+    height: height * 0.2,
+    width: width * 0.4,
+    borderRadius: 75,
+    paddingLeft : width * 0.2
+    // justifyContent : 'center',
+    // alignContent : 'center',
+    // alignItems : 'center'
+  },
+  draerText : {
+    fontWeight : 'bold',
+    fontSize : 22,
+    textAlign : 'justify',
+    paddingLeft : width * 0.05
+    
+  },
+  menuDrawer : {
+    paddingBottom : height * 0.035,
+    flexDirection : 'row',
+    
   }
 });

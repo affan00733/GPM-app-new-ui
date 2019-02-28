@@ -1,6 +1,7 @@
 
 import React, { PureComponent } from 'react';
-import { Image } from 'react-native';
+import { Image ,Dimensions} from 'react-native';
+const { height, width } = Dimensions.get('window')
 
 const menuIcon = (
   <Image
@@ -25,8 +26,8 @@ const vehicleIcon = (
 
 const distanceIcon = (
   <Image
-    source={require('../assets/images/icons/distance.png')}
-    style={{ height: 50, width: 50 }}
+    source={require('../assets/images/icon.png')}
+    style={{ height: 40, width: 40,    paddingLeft : width * 0.05    }}
   />
 );
 

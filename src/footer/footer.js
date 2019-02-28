@@ -188,10 +188,12 @@ export default class Footer extends Component {
             >
               <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center' }}>
                 <Animated.View style={{ height: animatedImageHeight, width: animatedImageHeight, marginLeft: animatedImageMarginLeft }}>
-                  <Image style={{ flex: 1, width: null, height: null }}
+                  <Image style={{ flex: 1, width: null, height: null ,paddingBottom : 10}}
                     source={require('./assets/Hotelcalifornia.png')} />
                 </Animated.View>
-                <Animated.Text style={{ opacity: animatedSongTitleOpacity, fontSize: 18, paddingLeft: 10 }}></Animated.Text>
+                <Animated.Text style={{ opacity: animatedSongTitleOpacity, fontSize: 18,fontWeight : 'bold', paddingLeft: 10,paddingBottom: 5 }}>
+                Notices : -
+                </Animated.Text>
               </View>
               <Animated.View style={{ opacity: animatedSongTitleOpacity, flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
                 {/* <Ionicons name="md-pause" size={32} /> */}
