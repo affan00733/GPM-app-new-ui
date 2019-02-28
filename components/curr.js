@@ -79,7 +79,7 @@ class CardComponent extends Component {
                                 // fullScreen = {true}
                             >
                                 <Pdf
-                                    source={{ uri: `http://192.168.0.104/GPM/pdf/p16/p16${this.state.dept}${this.state.sem}.pdf` }}
+                                    source={{ uri: `http://192.168.43.64/GPM/pdf/p16/p16${this.state.dept}${this.state.sem}.pdf` }}
                                     onLoadComplete={(numberOfPages, filePath) => {
                                         console.log(`number of pages: ${numberOfPages}`);
                                     }}

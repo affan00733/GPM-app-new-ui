@@ -6,8 +6,7 @@ import {
     StyleSheet,
     Image,
     Dimensions,
-    ScrollView,
-    Animated
+    ScrollView
 } from "react-native";
 import { Table, TableWrapper, Row } from 'react-native-table-component';
 
@@ -26,9 +25,9 @@ class CardPrinc extends Component {
           
             scrollY: new Animated.Value(0),
             tableHeadLab: ['Name of Lab', ' Lab Incharge', ' Supporting Staff', ' Total Investment', ' Ext No'],
-            widthArrLab: [50, 50, 50, 50, 50],
+            widthArrLab: [60, 60, 60, 60, 60],
             tableHeadFaculty: ['Sr no', 'Name of the Faculty/staff', 'Position', 'Ext no'],
-            widthArrFaculty: [150, 300, 300, 150]
+            widthArrFaculty: [40,60,60,40]
         }
       }
     render() {
@@ -41,7 +40,7 @@ class CardPrinc extends Component {
       
           ];
           const tableDataFaculty = [
-            ['1', 'Dr.A.U.Warad', 'Science and Humanity', '251'],
+            ['1', 'Dr.A.U.Warad', 'I/C Head, Science and Humanity', '251'],
             ['2', 'Prof. R.A.PAWAR', 'Lecturer in Mathematics', '251'],
             ['3', 'Prof. S.M.PATIL', 'Lecturer in Chemistry', '252'],
             ['4', 'Prof. Y.D.BHIDE', 'Lecturer in Physics', '253'],
@@ -152,8 +151,7 @@ class CardPrinc extends Component {
 
 
 
-   <CardItem cardBody style={{ paddingLeft: 10 }}>
-                            <View style={styles.container}>
+   
                     <ScrollView horizontal={true}>
                       <View>
                         <Table borderStyle={{ borderColor: '#C1C0B9' }}>
@@ -166,7 +164,7 @@ class CardPrinc extends Component {
                                 <Row
                                   key={index}
                                   data={rowData}
-                                  widthArrLab={state.widthArrLab}
+                                  widthArrLab={state.widthArr}
                                   style={[styles.row, index % 2 && { backgroundColor: '#F7F6E7' }]}
                                   textStyle={styles.text}
                                 />
@@ -176,8 +174,6 @@ class CardPrinc extends Component {
                         </ScrollView>
                       </View>
                     </ScrollView>
-                  </View>
-                                              </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
                                 <Text>{'\n\n'}</Text>
                             </CardItem>
@@ -222,7 +218,7 @@ class CardPrinc extends Component {
                                 <Row
                                   key={index}
                                   data={rowData}
-                                  widthArrFaculty={state.widthArrFaculty}
+                                  widthArrFaculty={state.widthArr}
                                   style={[styles.row, index % 2 && { backgroundColor: '#F7F6E7' }]}
                                   textStyle={styles.text}
                                 />
