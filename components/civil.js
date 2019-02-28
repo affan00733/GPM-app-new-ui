@@ -51,16 +51,15 @@ class CardComponent extends Component {
         const images = {
             
 
-            "1": require('../assets/feed_images/1.jpg'),
-            "2": require('../assets/feed_images/2.jpg'),
-            "3": require('../assets/feed_images/3.png')
+            "1": {uri : 'http://192.168.43.64/GPM/images/img09.jpg'}
+          
         }
 
         return (
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={require('../assets/me.jpg')} />
+                        <Thumbnail source={{uri : 'http://192.168.43.64/GPM/images/download.jpg'}} />
                         <Body>
                             <Text> Civil engineering   </Text>
                             {/* <Text note>Jan 15, 2018</Text> */}
@@ -84,7 +83,7 @@ class CardComponent extends Component {
                         <Card style={{ flex: 1 }}>
                             <CardItem>
                                 <Left>
-                                    <Thumbnail source={logo1} />
+                                <Thumbnail source={{uri : 'http://192.168.43.64/GPM/images/download.jpg'}} />
                                     <Body>
                                         <Text style={{ fontWeight: 'bold' }}><Text style={{ fontWeight: 'normal', opacity: 0.5 }}>  ï<Text>  2h</Text></Text></Text>
                                     </Body>
@@ -118,14 +117,14 @@ class CardComponent extends Component {
                         <Card style={{ flex: 1 ,width: width * 0.70}}>
                             <CardItem>
                                 <Left>
-                                    <Thumbnail source={logo1} />
+                                <Thumbnail source={{uri : 'http://192.168.43.64/GPM/images/download.jpeg'}} />
                                     <Body>
                                         <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  ï<Text>  2h</Text></Text></Text>
                                     </Body>
                                 </Left>
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Major Labs{'\n\n'} Computer Lab :</Text>
+                                <Text style={{fontWeight : 'bold'}} >Major Labs{'\n\n'} Computer Lab :{'\n\n'}</Text>
 
                             </CardItem>
                           

@@ -3,10 +3,12 @@ import {
     View,
     Text,
     StyleSheet,
-    Image,
-    Dimensions
+    Image,Dimensions,
+    ScrollView
 } from "react-native";
+import { Table, TableWrapper, Row } from 'react-native-table-component';
 
+import styles from '../src/styles/styles'
 import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
@@ -42,7 +44,7 @@ class CardComponent extends Component {
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
+                        {/* <Button transparent>
                             <Icon name="ios-heart-outline" style={{ color: 'black' }} />
                         </Button>
                         <Button transparent>
@@ -50,7 +52,7 @@ class CardComponent extends Component {
                         </Button>
                         <Button transparent>
                             <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
+                        </Button> */}
 
 
                     </Left>
@@ -66,7 +68,7 @@ class CardComponent extends Component {
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}>About Scheme</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
@@ -75,7 +77,7 @@ class CardComponent extends Component {
 
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text> Government Polytechnic Mumbai is an autonomous institute of Government of Maharashtra. Recently in 2010, we have celebrated Golden Jubilee of the institute.{'\n\n'}We have a team of highly qualified, experienced and dedicated faculties and non-teaching staff who are devoted to achieve excellence in the every activity of the institute. We own an excellent infrastructure, well equipped engineering departments, libraries, training and Placement cell, class rooms, seminar rooms and Auditorium Hall etc. {'\n\n'}The synergic efforts taken at the institute will help to achieve the vision of the institute and  make our student globally competitive entrepreneurs and employable engineers. This will ultimately help to transform them into a knowledge pool for India.</Text>
+                                <Text>Government Polytechnic Mumbai (GPM) is an academically autonomous institute of Government of Maharashtra and in practice of conducting specialized and tailor made continuing education programs apart from conventional diploma courses across the vicinity of Mumbai.{'\n\n'}Moreover, Government of Maharashtra has identified this institute for implementing Community college scheme of the Ministry of Human Resource Development (MHRD). This scheme aims to impart knowledge and skill based modular training programmes to generate employability. The modular training program will have different level based certifications; wherein at every level, the candidate will be equipped with knowledge and skill in particular area. The knowledge components in particular level will be evaluated by the institute and skill component by the prominent industry.{'\n\n'}Consequently, this institute has identified "Electronics Security" as area through search conferences, since a metropolitan city like Mumbai need trained personnel in Electronics Security. Further, this institute has joined hands with M/s. Zicom Electronic Security Systems Ltd (ZESSL). ZESSL is incorporated in 1994 and leading organization in electronics security in India.</Text>
 
 
                             </CardItem>
@@ -98,14 +100,14 @@ class CardComponent extends Component {
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}>About Scheme</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
                            
                           
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
+                                <Text>{'\n\n'}GPM and ZESSL believe that education plays a catalytic role in the dynamic growth of nation. Further, they believe the partnership between industries and the educational institute can take-up the challenges in the era of cutting age technologies and fulfills the need of technicians in the skill sector of electronic security. They also believe that the partnership between GPM and ZESSL would benefit the community.{'\n\n'} As a result of this GPM is planned to launch a programme in "Electronics Security" as detailed below:{'\n\n'}</Text>
                             </CardItem>
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
@@ -127,10 +129,10 @@ class CardComponent extends Component {
 }
 export default CardComponent;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     }
+// });

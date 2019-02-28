@@ -4,22 +4,45 @@ import {
     Text,
     StyleSheet,
     Image,
-    Dimensions
+    Dimensions,
+    ScrollView,
+    Animated
 } from "react-native";
+import { Table, TableWrapper, Row } from 'react-native-table-component';
 
+import styles from '../src/styles/styles'
 import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 
+
 const logo1 = require("./images/mkbhd.jpg");
 
-class Rti extends Component {
+class RightToInformation extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            tableHead1: ['Sr.No.','Name and actual Designation','Contact No.'],
+          widthArr1: [40, 60,60],
+
+        }
+    }
 
     render() {
+        const state = this.state;
+        const tableData1 = [
+          ['1', 'Prof. Swati Deshpande,\nPrincipal','Appealing Officer','Contact No:- 9029001925,\nEmail: gpmumbai@gpmumbai.ac.in'],
+          ['2', 'Mr. P. P. Choudhary,\nAdministrative Officer','Information Officer'],
+          ['3', 'Mrs. S. S. Kochrekar,\nRegistrar','Asst. Information Officer'],
+          
+
+        ];
 
         const images = {
+            
 
             "1": require('../assets/feed_images/1.jpg'),
             "2": require('../assets/feed_images/2.jpg'),
@@ -32,7 +55,7 @@ class Rti extends Component {
                     <Left>
                         <Thumbnail source={require('../assets/me.jpg')} />
                         <Body>
-                            <Text>RTI </Text>
+                            <Text> Right To Information </Text>
                             {/* <Text note>Jan 15, 2018</Text> */}
                         </Body>
                     </Left>
@@ -42,16 +65,6 @@ class Rti extends Component {
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
-                            <Icon name="ios-heart-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
-
 
                     </Left>
                 </CardItem>
@@ -66,16 +79,17 @@ class Rti extends Component {
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}><Text style={{ fontWeight: 'normal', opacity: 0.5 }}>  ï<Text>  2h</Text></Text></Text>
                                     </Body>
                                 </Left>
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
+                                <Text>Right To Information{'\n\n'} </Text>
 
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text> Government Polytechnic Mumbai is an autonomous institute of Government of Maharashtra. Recently in 2010, we have celebrated Golden Jubilee of the institute.{'\n\n'}We have a team of highly qualified, experienced and dedicated faculties and non-teaching staff who are devoted to achieve excellence in the every activity of the institute. We own an excellent infrastructure, well equipped engineering departments, libraries, training and Placement cell, class rooms, seminar rooms and Auditorium Hall etc. {'\n\n'}The synergic efforts taken at the institute will help to achieve the vision of the institute and  make our student globally competitive entrepreneurs and employable engineers. This will ultimately help to transform them into a knowledge pool for India.</Text>
+                            <Text> Accordingly, a Right to Information Cell has been established at Government Polytechnic, Mumbai{'\n\n'}</Text>
+
 
 
                             </CardItem>
@@ -94,21 +108,43 @@ class Rti extends Component {
                         </Card>
                         {/*  */}
                         <Card style={{ flex: 1 ,width: width * 0.70}}>
-                            <CardItem>
-                                <Left>
-                                    <Thumbnail source={logo1} />
-                                    <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
-                                    </Body>
-                                </Left>
-                            </CardItem>
                            
                           
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
+                            <CardItem>
+                            <ScrollView horizontal={true}>
+                      <View>
+                        <Table borderStyle={{ borderColor: '#C1C0B9' }}>
+                          <Row data={state.tableHead1} widthArr={state.widthArr1} style={styles.header} textStyle={styles.text} />
+                        </Table>
+                        <ScrollView style={styles.dataWrapper}>
+                          <Table borderStyle={{ borderColor: '#C1C0B9' }}>
+                            {
+                              tableData1.map((rowData, index) => (
+                                <Row
+                                  key={index}
+                                  data={rowData}
+                                  widthArr={state.widthArr1}
+                                  style={[styles.row, index % 2 && { backgroundColor: '#F7F6E7' }]}
+                                  textStyle={styles.text}
+                                />
+                              ))
+                            }
+                          </Table>
+                        </ScrollView>
+                      </View>
+                    </ScrollView>
+</CardItem>
+
+                    <CardItem cardBody style={{ paddingLeft: 10 }}>
+                                <Text>Documents under 4(1)(b)at Government Polytechnic Mumbai :</Text>
+
                             </CardItem>
+                          
+                        
+                            
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
+                                    
                                     <Text></Text>
                                 </Left>
                                 <Body>
@@ -118,6 +154,12 @@ class Rti extends Component {
 
                                 </Right>
                             </CardItem>
+
+
+                            
+
+
+
                         </Card>
                     </Body>
                 </CardItem>
@@ -125,12 +167,12 @@ class Rti extends Component {
         );
     }
 }
-export default Rti;
+export default RightToInformation;
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         alignItems: 'center',
+//         justifyContent: 'center'
+//     }
+// });
