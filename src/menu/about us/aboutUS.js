@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Alert,Dimensions } from 'react-native';
 import { Block, Card, Icon, Label } from '../../components';
 import { Overlay, Button } from 'react-native-elements'
+// import Button from '../../../animated button/button'
 let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 import PrincipalDesk from './options/principleDesk'
@@ -39,6 +40,8 @@ export default class AboutUS extends React.Component {
   }
 
   render() {
+    const { style, full, opacity, children, ...props } = this.props;
+
     return (
       <View>
         <Overlay
@@ -230,6 +233,7 @@ export default class AboutUS extends React.Component {
           
         </View>
         </View>
+       
       </View>
     );
   }

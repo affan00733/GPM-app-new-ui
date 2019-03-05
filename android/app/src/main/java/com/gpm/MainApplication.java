@@ -3,6 +3,7 @@ package com.gpm;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.reactnativedocumentpicker.ReactNativeDocumentPicker;
 import com.RNFetchBlob.RNFetchBlobPackage;
 import com.rnfs.RNFSPackage;
@@ -28,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new SplashScreenReactPackage(),
             new ReactNativeDocumentPicker(),
             new RNFetchBlobPackage(),
             new RNFSPackage(),

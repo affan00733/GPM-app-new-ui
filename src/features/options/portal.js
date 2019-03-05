@@ -33,7 +33,7 @@ class CardComponent extends Component {
     }
     get user() {
         return {
-            name: this.props.name,
+            name: this.state.name,
             _id: Fire.shared.uid,
         };
     }

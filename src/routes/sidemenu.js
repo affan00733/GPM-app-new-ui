@@ -38,7 +38,7 @@ class SideMenu extends Component {
                             }}>
                                 <Image
                                 style={styles.drawerImage}
-                                source={{ uri: 'http://192.168.0.105/GPM/images/Background.png' }}
+                                source={{ uri: 'http://192.168.43.64/GPM/images/0.png' }}
                             />
                             </View>
                         </Body>

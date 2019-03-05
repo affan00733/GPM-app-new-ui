@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
 import Gallery from 'react-native-image-gallery';
@@ -11,7 +12,7 @@ export default class Alumini extends React.Component {
   static navigationOptions = {
    
     headerTitle: (
-      <Block row middle><Text h4>Gallery</Text></Block>
+      <Block row middle><Text h4>Alumini</Text></Block>
     )
   }
   constructor(props) {
@@ -41,19 +42,19 @@ export default class Alumini extends React.Component {
         style={{ flex: 1, backgroundColor: 'black' }}
         images={[
           // { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_1.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_2.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_3.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_4.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_5.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_6.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_7.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_8.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_9.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_10.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_11.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_12.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_13.jpg' } },
 
         ]}
       />
@@ -71,13 +72,13 @@ export default class Alumini extends React.Component {
         style={{ flex: 1, backgroundColor: 'black' }}
         images={[
           // { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
-          { source: { uri: 'http://192.168.43.64/GPM/images/XP2BE7q.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_1.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_2.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_3.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_4.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_5.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_6.jpg' } },
+          { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI15_7.jpg' } },
          
 
         ]}

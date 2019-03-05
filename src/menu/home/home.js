@@ -13,6 +13,7 @@ import {
     Animated,
 } from 'react-native';
 import { Overlay } from 'react-native-elements'
+import Gallery from 'react-native-image-gallery';
 
 import Curriclum from '../student section/options/curr'
 import AcadCal from '../student section/options/acadCal'
@@ -67,7 +68,11 @@ class Home extends Component {
             isVissibleCalender: false,
             isVissiblePlace: false,
             isVissibleQuestPaper: false,
-     
+            isVisibleGalleryTechNex: false,
+            isVisibleGalleryFDBIT: false,
+            isVisibleGalleryTechkriti: false,
+            isVisibleGalleryKalpak: false
+
 
         }
     }
@@ -225,38 +230,38 @@ class Home extends Component {
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleCalender: true })}
                                     >
-                                    <Category imageUri={require('./assets/experiences.jpg')}
-                                        name="Academic Calendar"
-                                    />
+                                        <Category imageUri={require('./assets/experiences.jpg')}
+                                            name="Academic Calendar"
+                                        />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleresult: true })}
                                     >
-                                    <Category imageUri={require('./assets/restaurant.jpg')}
-                                        name="Result"
-                                    />
+                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                            name="Result"
+                                        />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleClassTT: true })}
                                     >
-                                     <Category imageUri={require('./assets/restaurant.jpg')}
-                                        name="class time table "
-                                    />
+                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                            name="class time table "
+                                        />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleQuestPaper: true })}
                                     >
-                                     <Category imageUri={require('./assets/restaurant.jpg')}
-                                        name="Question Paper "
-                                    />
+                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                            name="Question Paper "
+                                        />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissiblePlace: true })}
                                     >
-                                     <Category imageUri={require('./assets/restaurant.jpg')}
-                                        name="placement services "
-                                    />
-                                     </TouchableOpacity>
+                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                            name="placement services "
+                                        />
+                                    </TouchableOpacity>
                                 </ScrollView>
                             </View>
                             <View style={{ marginTop: 40, paddingHorizontal: 20 }}>
@@ -277,64 +282,156 @@ class Home extends Component {
                             <Card row middle style={styles.margin}>
 
                                 <Block>
-                                    <Text style={{fontWeight:'bold',fontSize : 24}} paragraph color="black3">
-                                    Institute Information {'\n'}
+                                    <Text style={{ fontWeight: 'bold', fontSize: 24 }} paragraph color="black3">
+                                        Institute Information {'\n'}
 
-              </Text> 
-              <Text  paragraph color="black3">
-              Establishment of Polytechnic at Elphinston Technical School, Dhobi Talav, Mumbai  with 60 intake in Civil Engineering on 15th June, 1960.
+                                    </Text>
+                                    <Text paragraph color="black3">
+                                        Establishment of Polytechnic at Elphinston Technical School, Dhobi Talav, Mumbai  with 60 intake in Civil Engineering on 15th June, 1960.
 The Polytechnic acquired existing campus in  May, 1985.{'\n'}
 
-              </Text>
-              <Text  paragraph color="black3">
-              Introduction of new diploma courses under State Government plan schemes viz. 
+                                    </Text>
+                                    <Text paragraph color="black3">
+                                        Introduction of new diploma courses under State Government plan schemes viz.
                                             Electronics engineering and Instrumentation in 1988, Mechanical in 1989.{'\n'}
 
-              </Text>
-              <Text  paragraph color="black3">
-              Implementation of World Bank assisted projects in 1990-98. Major components were 
-                                            capacity expansion, quality and efficiency improvement. Under this started a new 
-                                            course, Computer Engineering in 1992, which was awarded academic autonomy in 
+                                    </Text>
+                                    <Text paragraph color="black3">
+                                        Implementation of World Bank assisted projects in 1990-98. Major components were
+                                                                      capacity expansion, quality and efficiency improvement. Under this started a new
+                                                                      course, Computer Engineering in 1992, which was awarded academic autonomy in
                                             1990 to design, develop, implement own curriculum and issue own diploma.{'\n'}
 
-              </Text>
-              <Text  paragraph color="black3">
-              Implementation of Canada India Industry Polytechnic Linkage Project (CIILP-2002 
+                                    </Text>
+                                    <Text paragraph color="black3">
+                                        Implementation of Canada India Industry Polytechnic Linkage Project (CIILP-2002
                                             to 2005). The project focus was training of faculty and staff.{'\n'}
 
-              </Text>
-              <Text  paragraph color="black3">
-              The Polytechnic has been awarded Narsee Monjee Award for best performance in the 
+                                    </Text>
+                                    <Text paragraph color="black3">
+                                        The Polytechnic has been awarded Narsee Monjee Award for best performance in the
                                             year 1999 by ISTE.{'\n'}
- 
-              </Text>
+
+                                    </Text>
                                 </Block>
                             </Card>
                         </View>
                         <View style={{ marginTop: 40, marginBottom: 40 }}>
                             <Text style={{ fontSize: 24, fontWeight: '700', paddingHorizontal: 20 }}>
-Events
+                                Events
                             </Text>
                             <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                                <HomeNew width={width}
-                                    name="TechNex 2019"
-                                    rating={5}
-                                    image='http://192.168.43.64/GPM/images/photo.jpg'
-                                />
-                                <HomeNew width={width}
-                                    name="Kalpak 2019"
-                                    rating={4}
-                                    image='http://192.168.43.64/GPM/images/kalpak.JPG'
+                                <Overlay
+                                    isVisible={this.state.isVisibleGalleryTechNex}
+                                    onBackdropPress={() => this.setState({ isVisibleGalleryTechNex: false })}
+                                    windowBackgroundColor="rgba(255, 255, 255, .5)"
+                                    // overlayBackgroundColor="red"
+                                    width={width * 0.85}
+                                    height={height * 0.85}
+                                >
+                                    {/* <GalleryClick /> */}
+                                    <Gallery
+                                        style={{ flex: 1, backgroundColor: 'black' }}
+                                        images={[
+                                            //   { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/1.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/2.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/3.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/4.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/5.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/7.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/6.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/8.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/technex/9.JPG' } },
 
-                                />
+
+                                        ]}
+                                    />
+                                </Overlay>
+                                <Overlay
+                                    isVisible={this.state.isVisibleGalleryKalpak}
+                                    onBackdropPress={() => this.setState({ isVisibleGalleryKalpak: false })}
+                                    windowBackgroundColor="rgba(255, 255, 255, .5)"
+                                    // overlayBackgroundColor="red"
+                                    width={width * 0.85}
+                                    height={height * 0.85}
+                                >
+                                    {/* <GalleryClick /> */}
+                                    <Gallery
+                                        style={{ flex: 1, backgroundColor: 'black' }}
+                                        images={[
+                                            //   { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/1.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/2.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/3.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/4.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/5.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/7.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/6.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/kalpak/8.JPG' } },
+
+
+                                        ]}
+                                    />
+                                </Overlay>
+                                <TouchableOpacity
+                                    onPress={() => this.setState({ isVisibleGalleryTechNex: true })}
+
+                                >
+                                    <HomeNew width={width}
+                                        name="TechNex 2019"
+                                        rating={5}
+                                        image='http://192.168.43.64/GPM/images/photo.jpg'
+                                    />
+                                </TouchableOpacity>
+                                <TouchableOpacity
+                                    onPress={() => this.setState({ isVisibleGalleryKalpak: true })}
+
+                                >
+                                    <HomeNew width={width}
+                                        name="Kalpak 2019"
+                                        rating={4}
+                                        image='http://192.168.43.64/GPM/images/kalpak.JPG'
+
+                                    />
+                                </TouchableOpacity>
                             </View>
                             <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
-                                <HomeNew width={width}
-                                    name="Big Data & Hadoop FDP"
-                                    rating={5}
-                                    image='http://192.168.43.64/GPM/images/fdp.jpg'
+                                <Overlay
+                                    isVisible={this.state.isVisibleGalleryFDBIT}
+                                    onBackdropPress={() => this.setState({ isVisibleGalleryFDBIT: false })}
+                                    windowBackgroundColor="rgba(255, 255, 255, .5)"
+                                    // overlayBackgroundColor="red"
+                                    width={width * 0.85}
+                                    height={height * 0.85}
+                                >
+                                    {/* <GalleryClick /> */}
+                                    <Gallery
+                                        style={{ flex: 1, backgroundColor: 'black' }}
+                                        images={[
+                                            //   { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/fdpit/1.jpeg' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/fdpit/2.jpeg' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/fdpit/3.jpeg' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/fdpit/4.jpeg' } },
 
-                                />
+
+                                        ]}
+                                    />
+                                </Overlay>
+                                <TouchableOpacity
+                                    onPress={() => this.setState({ isVisibleGalleryFDBIT: true })}
+
+                                >
+
+                                    <HomeNew width={width}
+                                        name="Big Data & Hadoop FDP"
+                                        rating={5}
+                                        image='http://192.168.43.64/GPM/images/fdp.jpg'
+
+                                    />
+                                </TouchableOpacity>
+
                                 <HomeNew width={width}
                                     name="Konstruct 2019"
                                     rating={3}
@@ -343,19 +440,47 @@ Events
                                 />
                             </View>
                             <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+                                <Overlay
+                                    isVisible={this.state.isVisibleGalleryTechkriti}
+                                    onBackdropPress={() => this.setState({ isVisibleGalleryTechkriti: false })}
+                                    windowBackgroundColor="rgba(255, 255, 255, .5)"
+                                    // overlayBackgroundColor="red"
+                                    width={width * 0.85}
+                                    height={height * 0.85}
+                                >
+                                    {/* <GalleryClick /> */}
+                                    <Gallery
+                                        style={{ flex: 1, backgroundColor: 'black' }}
+                                        images={[
+                                            //   { source: require('yourApp/image.png'), dimensions: { width: 150, height: 150 } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/techkriti/1.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/techkriti/2.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/techkriti/3.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/techkriti/4.JPG' } },
+                                            { source: { uri: 'http://192.168.43.64/GPM/images/techkriti/5.JPG' } },
+
+
+                                        ]}
+                                    />
+                                </Overlay>
                                 <HomeNew width={width}
                                     name="Mechnova 2019"
                                     rating={3}
                                     image='http://192.168.43.64/GPM/images/mech.jpg'
 
                                 />
-                              <HomeNew width={width}
-                                    name="TechKriti 2018"
-                                    rating={4}
-                                    image='http://192.168.43.64/GPM/images/techkriti.JPG'
+                                <TouchableOpacity
+                                    onPress={() => this.setState({ isVisibleGalleryTechkriti: true })}
 
-                                />
-                            
+                                >
+
+                                    <HomeNew width={width}
+                                        name="TechKriti 2018"
+                                        rating={4}
+                                        image='http://192.168.43.64/GPM/images/techkriti.JPG'
+
+                                    />
+                                </TouchableOpacity>
                             </View>
                             <View style={{ paddingHorizontal: 20, paddingBottom: 20, marginTop: 20, marginBottom: 20, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }}>
                                 <HomeNew width={width}
@@ -363,8 +488,8 @@ Events
                                     rating={4}
                                     image='http://192.168.43.64/GPM/images/techknow.jpeg'
                                 />
-                             
-                            
+
+
                             </View>
                         </View>
                         <View style={{ paddingVertical: 25, marginBottom: 40 }}>
@@ -390,7 +515,7 @@ Events
                                                 {/* <Text paragraph color="gray">Chevrolet Bolt</Text> */}
                                             </Block>
                                             <Block>
-                                               
+
                                             </Block>
                                         </Block>
                                     </TouchableOpacity>
@@ -409,7 +534,7 @@ Events
                                                 {/* <Text paragraph color="gray">Tesla Model X</Text> */}
                                             </Block>
                                             <Block>
-                                               
+
                                             </Block>
                                         </Block>
                                     </TouchableOpacity>
@@ -446,7 +571,7 @@ Events
                                                 {/* <Text paragraph color="gray">Volvo Intellisafe</Text> */}
                                             </Block>
                                             <Block>
-                                                
+
                                             </Block>
                                         </Block>
                                     </TouchableOpacity>
@@ -465,7 +590,7 @@ Events
                                                 {/* <Text paragraph color="gray">Volvo Intellisafe</Text> */}
                                             </Block>
                                             <Block>
-                                               
+
                                             </Block>
                                         </Block>
                                     </TouchableOpacity>

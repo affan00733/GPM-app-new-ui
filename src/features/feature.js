@@ -29,7 +29,7 @@ export default class Gallery extends React.Component {
     headerRight: (
       <TouchableOpacity style={{ marginRight: 10 }} onPress={() => firebase.auth().signOut().then(function () {
         // Sign-out successful.
-
+        this.props.navigation.navigate('home')
         console.log('correct logout')
 
     }).catch(function (error) {
