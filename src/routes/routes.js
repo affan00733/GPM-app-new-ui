@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Container, Header, Content } from 'native-base';
 import { Text,Button,TouchableOpacity } from 'react-native'
 // import Icon from 'react-native-vector-icons/MaterialIcons'
+import firebase from 'firebase'
 
 import SideMenu from './sidemenu'
 
@@ -92,7 +93,37 @@ const Dr = createDrawerNavigator({
     
     
     }, {
-        })
+        navigationOptions: ({ navigation }) => ({
+            headerLeftContainerStyle: {
+                paddingLeft: 34,
+          
+              },
+              headerRightContainerStyle: {
+                paddingRight: 24
+              },
+            //   headerLeft: (
+            //     <TouchableOpacity style={{ marginLeft: 10 }}  ><Icon menu /></TouchableOpacity>
+            //   ),
+              headerRight: (
+                <TouchableOpacity style={{ marginRight: 10 }} onPress={() => {
+                  firebase.auth().signOut().then(function () {
+                  // Sign-out successful.
+                  this.props.navigation.navigate('home')
+                  console.log('correct logout')
+          
+              }).catch(function (error) {
+                  // An error happened.
+                  console.log(error)
+              })
+              navigation.navigate('Dr')
+          
+            } }><Icon notification /></TouchableOpacity>
+              ),
+              headerTitle: (
+                <Block row middle><Text h4>Features</Text></Block>
+              ),
+      }),
+})
     
 const St = createStackNavigator({
     Login: { screen: Login 

@@ -343,9 +343,9 @@ class CardComponent extends Component {
                                 <Text>Message{'\n\n'} </Text>
 
                             </CardItem> */}
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                            <CardItem cardBody style={{ paddingLeft: 10, }}>
 
-                                <View style={styles.inputsContainer}>
+                                <View style={[styles.inputsContainer,{borderRadius : 10}]}>
 
                                     <View style={styles.inputContainer}>
                                         <View style={styles.iconContainer}>
@@ -356,7 +356,7 @@ class CardComponent extends Component {
                                             />
                                         </View>
                                         <TextInput
-                                            style={[styles.input, styles.whiteFont]}
+                                            style={[styles.input, styles.whiteFont1]}
                                             placeholder="FROM"
                                             placeholderTextColor="#FFF"
                                             onChangeText={from => this.setState({ from })}
@@ -373,7 +373,7 @@ class CardComponent extends Component {
                                             />
                                         </View>
                                         <TextInput
-                                            style={[styles.input, styles.whiteFont]}
+                                            style={[styles.input, styles.whiteFont1]}
                                             placeholder="TO"
                                             placeholderTextColor="#FFF"
                                             onChangeText={to => this.setState({ to })}
@@ -455,9 +455,9 @@ class CardComponent extends Component {
                                 <Text>Message{'\n\n'} </Text>
 
                             </CardItem> */}
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                            <CardItem cardBody style={{ paddingLeft: 10 ,alignContent: 'center', alignItems: "center", justifyContent: "center"}}>
 
-                                <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}
+                                <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", paddingLeft: 10}} activeOpacity={.5}
                                     onPress={() => this._pickDocument()}
                                 >
                                     <View style={styles.button}>
@@ -465,9 +465,9 @@ class CardComponent extends Component {
                                     </View>
                                 </TouchableOpacity>
                             </CardItem>
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                            <CardItem cardBody style={{ paddingLeft: 10 ,alignContent: 'center', alignItems: "center", justifyContent: "center"}}>
 
-                                <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}
+                                <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", paddingLeft: 10}} activeOpacity={.5}
                                     onPress={() => this.uploadPic()}
                                 >
                                     <View style={styles.button}>

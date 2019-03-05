@@ -15,32 +15,36 @@ import firebase from 'firebase'
 // let enroll= this.props.navigation.state.params.Enroll
 
 export default class Gallery extends React.Component {
-  static navigationOptions = {
-    headerLeftContainerStyle: {
-      paddingLeft: 34,
+  // static navigationOptions = {
+  //   headerLeftContainerStyle: {
+  //     paddingLeft: 34,
 
-    },
-    headerRightContainerStyle: {
-      paddingRight: 24
-    },
-    headerLeft: (
-      <TouchableOpacity style={{ marginLeft: 10 }}  ><Icon menu /></TouchableOpacity>
-    ),
-    headerRight: (
-      <TouchableOpacity style={{ marginRight: 10 }} onPress={() => firebase.auth().signOut().then(function () {
-        // Sign-out successful.
-        this.props.navigation.navigate('home')
-        console.log('correct logout')
+  //   },
+  //   headerRightContainerStyle: {
+  //     paddingRight: 24
+  //   },
+  //   headerLeft: (
+  //     <TouchableOpacity style={{ marginLeft: 10 }}  ><Icon menu /></TouchableOpacity>
+  //   ),
+  //   headerRight: (
+  //     <TouchableOpacity style={{ marginRight: 10 }} onPress={() => {
+  //   //     firebase.auth().signOut().then(function () {
+  //   //     // Sign-out successful.
+  //   //     this.props.navigation.navigate('home')
+  //   //     console.log('correct logout')
 
-    }).catch(function (error) {
-        // An error happened.
-        console.log(error)
-    }) }><Icon notification /></TouchableOpacity>
-    ),
-    headerTitle: (
-      <Block row middle><Text h4>Features</Text></Block>
-    )
-  }
+  //   // }).catch(function (error) {
+  //   //     // An error happened.
+  //   //     console.log(error)
+  //   // })
+  //   this.props.navigation.navigate('Login')
+
+  // } }><Icon notification /></TouchableOpacity>
+  //   ),
+  //   headerTitle: (
+  //     <Block row middle><Text h4>Features</Text></Block>
+  //   )
+  // }
   constructor(props) {
     super(props)
     this.state = {

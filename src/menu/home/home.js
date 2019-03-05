@@ -223,42 +223,42 @@ class Home extends Component {
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleGallery: true })}
                                     >
-                                        <Category imageUri={require('./assets/home.jpg')}
+                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/currriculum.jpg'}}
                                             name="Curriculum"
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleCalender: true })}
                                     >
-                                        <Category imageUri={require('./assets/experiences.jpg')}
+                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/acadamic.jpg'}}
                                             name="Academic Calendar"
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleresult: true })}
                                     >
-                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/result.jpg'}}
                                             name="Result"
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleClassTT: true })}
                                     >
-                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/class timetable.jpg'}}
                                             name="class time table "
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleQuestPaper: true })}
                                     >
-                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/questionpaper.jpg'}}
                                             name="Question Paper "
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissiblePlace: true })}
                                     >
-                                        <Category imageUri={require('./assets/restaurant.jpg')}
+                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/placement services.jpg'}}
                                             name="placement services "
                                         />
                                     </TouchableOpacity>

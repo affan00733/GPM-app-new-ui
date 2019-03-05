@@ -252,11 +252,11 @@ class CardComponent extends Component {
                                 </Left>
                             </CardItem>
 
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                            <CardItem cardBody style={{ paddingLeft: 10 ,width : width * 0.6}}>
 
                                 <Picker
                                     selectedValue={this.state.teacherName}
-                                    style={{ height: 50, width: 100 }}
+                                    style={{ flex : 1 }}
                                     onValueChange={(itemValue, itemIndex) =>
                                         this.setState({ teacherName: itemValue })
                                     }>
@@ -308,9 +308,9 @@ class CardComponent extends Component {
                                     onPress={(item) => this._onSelect(item)}
                                 />
                             </CardItem>
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                            <CardItem cardBody style={{ paddingLeft: 10,justifyContent: 'center', alignContent: 'center' ,alignItems: 'center' }}>
 
-                                <View style={{ justifyContent: 'center', alignContent: 'center' }}>
+                                <View style={{ justifyContent: 'center', alignContent: 'center' ,alignItems: 'center'}}>
                                     <Button
 
                                         title={this.state.buttonVal}
