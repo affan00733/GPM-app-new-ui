@@ -39,6 +39,8 @@ export default class Admission extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <DiplProg />
         </Overlay>
@@ -50,6 +52,8 @@ export default class Admission extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ContEduPrg />
         </Overlay>
@@ -73,6 +77,8 @@ export default class Admission extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <AdmNot />
         </Overlay>
@@ -84,6 +90,8 @@ export default class Admission extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <AdmNot />
         </Overlay>
@@ -95,6 +103,8 @@ export default class Admission extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Broch />
         </Overlay>

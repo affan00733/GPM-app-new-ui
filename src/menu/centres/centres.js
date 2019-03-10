@@ -41,6 +41,8 @@ export default class Centres extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ConsTest />
         </Overlay>
@@ -52,6 +54,8 @@ export default class Centres extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <CentLib />
         </Overlay>
@@ -63,6 +67,8 @@ export default class Centres extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ComClg />
         </Overlay>
@@ -74,6 +80,8 @@ export default class Centres extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ComPol />
         </Overlay>
@@ -85,6 +93,8 @@ export default class Centres extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ExamCell />
         </Overlay>
@@ -96,6 +106,8 @@ export default class Centres extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <PlacSer />
         </Overlay>

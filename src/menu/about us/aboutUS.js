@@ -62,7 +62,9 @@ export default class AboutUS extends React.Component {
           windowBackgroundColor="rgba(255, 255, 255, .5)"
           // overlayBackgroundColor="red"
           width={width * 0.85}
-          height={height * 0.85}
+          height={height * 0.85}          
+          fullScreen={true}
+
         >
           <AboutInst />
         </Overlay>
@@ -74,6 +76,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <MissionVission />
         </Overlay>
@@ -85,6 +89,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <OrganStruc />
         </Overlay>
@@ -96,6 +102,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <GovernBod />
         </Overlay>
@@ -107,6 +115,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Rti />
         </Overlay>
@@ -118,6 +128,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <CitiChar />
         </Overlay>
@@ -129,6 +141,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ManDis />
         </Overlay>
@@ -140,6 +154,8 @@ export default class AboutUS extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Infra />
         </Overlay>

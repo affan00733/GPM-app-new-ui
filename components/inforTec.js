@@ -69,7 +69,7 @@ class CardComponent extends Component {
                     <Left>
                         <Thumbnail source={require('../assets/me.jpg')} />
                         <Body>
-                            <Text> Information Technology{'\n\n'} Vision </Text>
+                            <Text> Information Technology  </Text>
                             {/* <Text note>Jan 15, 2018</Text> */}
                         </Body>
                     </Left>
@@ -93,9 +93,13 @@ class CardComponent extends Component {
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}><Text style={{ fontWeight: 'normal', opacity: 0.5 }}>  ï</Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}> Information Technology </Text>
                                     </Body>
                                 </Left>
+                            </CardItem>
+                            <CardItem cardBody style={{ paddingLeft: 10 }}>
+                                <Text>Vission{'\n\n'} </Text>
+
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
                                 <Text>Develop IT professionals to solve real life problems{'\n\n'} </Text>

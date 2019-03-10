@@ -50,6 +50,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Civil />
         </Overlay>
@@ -61,6 +63,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Computer />
         </Overlay>
@@ -72,6 +76,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Electrical />
         </Overlay>
@@ -83,6 +89,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Electronics />
         </Overlay>
@@ -94,6 +102,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <InforTec />
         </Overlay>
@@ -106,6 +116,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Instrum />
         </Overlay>
@@ -117,6 +129,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Leather/>
         </Overlay>
@@ -128,6 +142,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Mech/>
         </Overlay>
@@ -139,6 +155,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Sci />
         </Overlay>
@@ -150,6 +168,8 @@ export default class Department extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Rubber/>
         </Overlay>

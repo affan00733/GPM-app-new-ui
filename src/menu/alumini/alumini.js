@@ -35,6 +35,8 @@ export default class Alumini extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           {/* <GalleryClick /> */}
 
@@ -57,6 +59,8 @@ export default class Alumini extends React.Component {
           { source: { uri: 'http://192.168.43.64/GPM/images/ALUMNI14_13.jpg' } },
 
         ]}
+        fullScreen={true}
+
       />
         </Overlay>
         <Overlay
@@ -66,6 +70,8 @@ export default class Alumini extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           {/* <GalleryClick /> */}
           <Gallery
@@ -82,6 +88,8 @@ export default class Alumini extends React.Component {
          
 
         ]}
+        fullScreen={true}
+
       />
         </Overlay>
 

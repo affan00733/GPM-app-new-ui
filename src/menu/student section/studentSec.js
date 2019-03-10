@@ -46,6 +46,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <AcadCal/>
         </Overlay>
@@ -57,6 +59,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Curr/>
         </Overlay>
@@ -68,6 +72,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <QuestPaper/>
         </Overlay>
@@ -79,6 +85,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Circular/>
         </Overlay>
@@ -90,6 +98,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Online />
         </Overlay>
@@ -101,6 +111,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Result/>
         </Overlay>
@@ -112,6 +124,8 @@ export default class StudentSec extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <ClassTT/>
         </Overlay>
