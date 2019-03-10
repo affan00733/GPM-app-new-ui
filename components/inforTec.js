@@ -88,7 +88,7 @@ class CardComponent extends Component {
                     <Body>
                        
                     
-                        <Card style={{ flex: 1 }}>
+                        <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />

@@ -80,7 +80,7 @@ class CardComponent extends Component {
                     <Body>
                        
                     
-                        <Card style={{ flex: 1 }}>
+                        <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                 <Thumbnail source={{uri : 'http://192.168.43.64/GPM/images/download.jpg'}} />
