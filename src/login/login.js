@@ -24,111 +24,94 @@ const lockIcon = require("./login1_lock.png");
 const personIcon = require("./login1_person.png");
 const backIcon = require("./back.png");
 firebase.initializeApp({
-    
+
     apiKey: "AIzaSyA2OQpG8lowe8FYk7DF6PXRbiHACwRbiJU",
     authDomain: "chatapp-16f24.firebaseapp.com",
     databaseURL: "https://chatapp-16f24.firebaseio.com",
     projectId: "chatapp-16f24",
     storageBucket: "chatapp-16f24.appspot.com",
     messagingSenderId: "559355718425"
-  });
+});
+let json = []
 export default class Login extends Component {
     static navigationOptions = {
         headerMode: 'none'
-        }
+    }
     constructor(props) {
         super(props)
         this.state = {
             email: '',
             password: '',
-            response : [],
+            data: [],
         }
     }
-press=()=>{
-    // ToastAndroid.show('A pikachu appeared nearby !', ToastAndroid.SHORT);
-    // ToastAndroid.showWithGravity(
-    //     'All Your Base Are Belong To Us',
-    //     ToastAndroid.SHORT,
-    //     ToastAndroid.CENTER,
-    //   );
-     
-}
-    login = () => {
-const {email,password}=this.state
 
-        fetch('http://192.168.43.64/GPM/user_login.php', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
+    login = async () => {
+        const { email, password } = this.state
+        try {
 
-                email: email,
+            await firebase.auth().signInWithEmailAndPassword(email, password).then(async function (user) {
+                console.log(user)
+                let response = await fetch("http://192.168.43.64/GPM/user_login.php", {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
 
-                password: password
+                        email: email,
+
+                        password: password
+
+                    })
+                })
+                json = await response.json();
+                // this.setState({ data: json });
+                // console.log(this.state.data[0])
+                console.log('response enroll', json[0].enroll)
+                console.log('response enroll', json[0].name)
+                console.log('response enroll', json[0].email)
+
+                console.log('response enroll', json[0])
+
+
+
+                await ToastAndroid.showWithGravityAndOffset(
+                    `welcome ${email}`,
+                    ToastAndroid.LONG,
+                    ToastAndroid.BOTTOM,
+                    25,
+                    50,
+                );
+
+
+
 
             })
 
-        }).then((response) => response.json())
-            .then((responseJson) => {
-                // console.log(responseJson);
 
-                // If server response message same as Data Matched
-                if (responseJson != 'Invalid Username or Password Please Try Again') {
-
-                    // console.log(responseJson);
-                    // Alert.alert('');
-                    firebase.auth().signInWithEmailAndPassword(email, password)
-                    // .catch(function(error) {
-                    //     // Handle Errors here.
-                    //     var errorCode = error.code;
-                    //     var errorMessage = error.message;
-                    //     Alert.alert('Incorrect login')
-
-                    //     // ...
-                    //   });
-                    this.setState({response : responseJson[0]})
-                    console.log(this.state.response)
-                    ToastAndroid.showWithGravityAndOffset(
-                        `welcome ${email}`,
-                        ToastAndroid.LONG,
-                        ToastAndroid.BOTTOM,
-                        25,
-                        50,
-                      );
-                    //Then open Profile activity and send user email to profile activity.
-                    this.props.navigation.navigate('St2',{ 
-                        Enroll: this.state.response.enroll ,
-                        Name :  this.state.response.name ,
-                        Email  :this.state.response.email,
-                        year : this.state.response.year,
-                        dept : this.state.response.dept,
-                        shift : this.state.response.shift,
-                        mobile : this.state.response.mobile,
-                        address : this.state.response.address,
-                        gender : this.state.response.gender,
-                        dob : this.state.response.dob,
-                    
-                    });
+            await this.props.navigation.navigate('St2'
+                , {
+                    Enroll: json[0].enroll,
+                    Name: json[0].name,
+                    Email: json[0].email,
+                    year: json[0].year,
+                    dept: json[0].dept,
+                    shift: json[0].shift,
+                    mobile: json[0].mobile,
+                    address: json[0].address,
+                    gender: json[0].gender,
+                    dob: json[0].dob,
 
                 }
-                else {
-                    ToastAndroid.showWithGravityAndOffset(
-                        responseJson,
-                        ToastAndroid.LONG,
-                        ToastAndroid.BOTTOM,
-                        25,
-                        50,
-                      );
-                      console.log(responseJson)
-                    // Alert.alert(responseJson);
-                }
+            );
+        }
 
-            }).catch((error) => {
-                console.error(error);
-            });
-
+        catch (error) {
+            console.log(error.toString())
+            Alert.alert(error.toString())
+        }
     }
 
 
@@ -166,7 +149,7 @@ const {email,password}=this.state
                                 placeholderTextColor="#FFF"
                                 onChangeText={email => this.setState({ email })}
                                 style={[styles.input, styles.whiteFont]}
-                                />
+                            />
                         </View>
                         <View style={styles.inputWrap}>
                             <View style={styles.iconWrap}>

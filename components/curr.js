@@ -68,7 +68,7 @@ class CardComponent extends Component {
                     <Body>
 
 
-                    <Card style={{ flex: 1 ,width: width * 0.70}}>
+                                            <Card style={{ width: width * 0.80}}>
                             <Overlay
                                 isVisible={this.state.isVisiblepdf}
                                 onBackdropPress={() => this.setState({ isVisiblepdf: false })}
@@ -96,7 +96,7 @@ class CardComponent extends Component {
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>Curriculm<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Curriculm</Text>
                                     </Body>
                                 </Left>
                             </CardItem>

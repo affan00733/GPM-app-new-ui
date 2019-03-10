@@ -107,7 +107,7 @@ class RightToInformation extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
+                                                <Card style={{ width: width * 0.80}}>
                            
                           
                             <CardItem>

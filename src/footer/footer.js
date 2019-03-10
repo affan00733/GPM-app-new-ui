@@ -19,56 +19,70 @@ import Tender from '../notices/tender'
 
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
-import { createDrawerNavigator, createAppContainer, createMaterialTopTabNavigator,createStackNavigator, createSwitchNavigator } from 'react-navigation';
+import { createDrawerNavigator, createAppContainer, createMaterialTopTabNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 // import { Container, Header, Content } from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 const Notice = createMaterialTopTabNavigator({
-  Ln : {screen : Ln,
+  Ln: {
+    screen: Ln,
     navigationOptions: ({ navigation }) => ({
       title: 'Latest News',
-      tabBarIcon : ({tintColor}) => (
-        <IconFont name = 'database' color={tintColor} size={24}/>
+      tabBarIcon: ({ tintColor }) => (
+        <IconFont name='gitlab' color={tintColor} size={24} />
       )
     }),
-  
-},
-  Sc : {screen : Sc,
+
+  },
+  Sc: {
+    screen: Sc,
     navigationOptions: ({ navigation }) => ({
       title: 'Student  Corner',
-      tabBarIcon : ({tintColor}) => (
-        <IconFont name = 'database' color={tintColor} size={24}/>
+      tabBarIcon: ({ tintColor }) => (
+        <IconFont name='gitlab' color={tintColor} size={24} />
       )
-    }),},
-  Cep : {screen : Cep,
+    }),
+  },
+  Cep: {
+    screen: Cep,
     navigationOptions: ({ navigation }) => ({
       title: 'CEP News',
-      tabBarIcon : ({tintColor}) => (
-        <IconFont name = 'database' color={tintColor} size={24}/>
+      tabBarIcon: ({ tintColor }) => (
+        <IconFont name='gitlab' color={tintColor} size={24} />
       )
-    }),},
-  Tender : {screen : Tender,
+    }),
+  },
+  Tender: {
+    screen: Tender,
     navigationOptions: ({ navigation }) => ({
       title: 'Tender News',
-      tabBarIcon : ({tintColor}) => (
-        <IconFont name = 'database' color={tintColor} size={24}/>
+      tabBarIcon: ({ tintColor }) => (
+        <IconFont name='gitlab' color={tintColor} size={24} />
       )
-    }),},
+    }),
+  },
 },
-{
-  tabBarOptions: {
-    labelStyle: {
-      fontSize: 12,
+  {
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: 12,
+        fontWeight : 'bold'
+      },
+      tabStyle: {
+        // width: 100,
+        paddingBottom: SCREEN_HEIGHT * 0.2
+      },
+
+      style: {
+        backgroundColor: '#F0F3F4',
+
+      },
+      activeTintColor: '#E74C3C',
+      showIcon: true,
+      tabBarPosition: 'bottom'
     },
-    tabStyle: {
-      width: 100,
-    },
-    style: {
-      backgroundColor: 'white',
-    },
-    activeTintColor : '#DCA800',
-    showIcon : true
+    tabBarPosition: 'bottom',
+    lazy: true
   }
-}
 )
 export default class Footer extends Component {
 
@@ -170,10 +184,10 @@ export default class Footer extends Component {
     })
     return (
       <Animated.View style={{ flex: 1, backgroundColor: animatedBackgroundColor }}>
-      <Routes />
+        <Routes />
         <Animated.View
           {... this.panResponder.panHandlers}
-          style={[animatedHeight, { position: 'absolute', left: 0, right: 0, zIndex: 10, backgroundColor: 'white', height: SCREEN_HEIGHT }]}
+          style={[animatedHeight, { position: 'absolute', left: 0, right: 0, zIndex: 10, backgroundColor: '#F0F3F4', height: SCREEN_HEIGHT }]}
 
         >
           <ScrollView
@@ -188,49 +202,33 @@ export default class Footer extends Component {
             >
               <View style={{ flex: 4, flexDirection: 'row', alignItems: 'center' }}>
                 <Animated.View style={{ height: animatedImageHeight, width: animatedImageHeight, marginLeft: animatedImageMarginLeft }}>
-                  <Image style={{ flex: 1, width: null, height: null ,paddingBottom : 10}}
-                    source={require('./assets/Hotelcalifornia.png')} />
+                  <Image style={{ flex: 1, width: null, height: null, paddingBottom: 10 }}
+                    source={require('./icon.png')}
+                  />
                 </Animated.View>
-                <Animated.Text style={{ opacity: animatedSongTitleOpacity, fontSize: 18,fontWeight : 'bold', paddingLeft: 10,paddingBottom: 5 }}>
-                Notices : -
+                <Animated.Text style={{ opacity: animatedSongTitleOpacity, fontSize: 18, fontWeight: 'bold', paddingLeft: 10, paddingBottom: 5 }}>
+                  Notices : -
                 </Animated.Text>
               </View>
-              <Animated.View style={{ opacity: animatedSongTitleOpacity, flex: 1, flexDirection: 'row', justifyContent: 'space-around' }}>
-                {/* <Ionicons name="md-pause" size={32} /> */}
-                {/* <Ionicons name="md-play" size={32} /> */}
 
-              </Animated.View>
             </Animated.View>
 
             <Animated.View style={{ height: animatedHeaderHeight, opacity: animatedSongDetailsOpacity }}>
 
+
+
               <View
-              //  style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-end' }}
+                style={{ flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}
               >
-                {/* <Text style={{ fontWeight: 'bold', fontSize: 22 }}> </Text>
-                <Text style={{ fontSize: 18, color: '#fa95ed' }}></Text>
-                <Text>aaa</Text> */}
-              </View>
-
-              {/* <View style={{ height: 40, width: SCREEN_WIDTH, alignItems: 'center' }}>
-                <Slider
-                  style={{ width: 300 }}
-                  step={1}
-                  minimumValue={18}
-                  maximumValue={71}
-                  value={18}
-
-                />
-              </View> */}
-
-              <View style={{ flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
                 {/* <Ionicons name="md-rewind" size={40} /> */}
                 {/* <Ionicons name="md-pause" size={50} /> */}
                 {/* <Ionicons name="md-fastforward" size={40} /> */}
                 <Notice />
 
               </View>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, paddingBottom: 20 }}>
+              <View
+              // style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, paddingBottom: 20 }}
+              >
                 {/* <Ionicons name="md-add" size={32} style={{ color: '#fa95ed' }} /> */}
                 {/* <Ionicons name="md-more" size={32} style={{ color: '#fa95ed' }} /> */}
               </View>

@@ -85,7 +85,7 @@ export default class Cep extends Component {
 
     console.log('source', this.state.source)
     return (
-      <View style={styles.container}>
+      <View style={[styles.container,{backgroundColor: '#F0F3F4'}]}>
 
 
         <Modal
@@ -130,7 +130,7 @@ export default class Cep extends Component {
 
                 }}>
                 <View style={styles.notice}>
-                  <IconFont name='external-link' color='red' size={28} />
+                  <IconFont name='medium' color='#6C3483' size={28} />
 
                   <Text style={styles.noticeText}>
                     {` ${item.name} `}

@@ -114,7 +114,7 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
+                                                <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                 <Thumbnail source={{uri : 'http://192.168.43.64/GPM/images/download.jpeg'}} />

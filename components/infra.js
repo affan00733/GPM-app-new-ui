@@ -143,7 +143,7 @@ class Infrastructure extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1 ,width: width * 0.70}}>
+                                                <Card style={{ width: width * 0.80}}>
                             
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
                                 <Text>Statement showing existing building details:(values in Sq. Meters)</Text>

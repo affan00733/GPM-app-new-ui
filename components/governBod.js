@@ -105,7 +105,7 @@ class GovernBody extends Component {
                     <Body>
 
 
-                    <Card style={{ flex: 1 ,width: width * 0.70}}>
+                                            <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />

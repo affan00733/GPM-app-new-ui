@@ -85,7 +85,7 @@ export default class Tender extends Component {
 
     console.log('source', this.state.source)
     return (
-      <View style={styles.container}>
+      <View style={[styles.container,{backgroundColor: '#FFA07A'}]}>
 
 
         <Modal
@@ -130,7 +130,7 @@ export default class Tender extends Component {
 
                 }}>
                 <View style={styles.notice}>
-                  <IconFont name='external-link' color='red' size={28} />
+                  <IconFont name='codepen' color='#6C3483' size={28} />
 
                   <Text style={styles.noticeText}>
                     {` ${item.name} `}

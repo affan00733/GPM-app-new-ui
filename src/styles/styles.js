@@ -112,7 +112,7 @@ export default styles = StyleSheet.create({
   },
   noticeText: {
     paddingLeft: 4,
-    color: 'red',
+    color: '#6C3483',
     fontWeight: 'bold',
     fontSize: 24,
     // textDecorationLine : 'underline'
@@ -185,11 +185,13 @@ export default styles = StyleSheet.create({
     borderColor: 'transparent',
     flexDirection: 'row',
     height: 75,
+    // color : 'w'
   },
   iconContainer: {
     paddingHorizontal: 15,
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
   inputIcon: {
     width: 30,
