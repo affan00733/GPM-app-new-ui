@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions } from 'react-native';
-// import prop
 import { Block, Card, Icon, Label } from '../components';
 import { Overlay, Button } from 'react-native-elements'
 let width = Dimensions.get('window').width;
@@ -9,42 +8,9 @@ import Concession from './options/concession'
 import Feedbck from './options/feedbck'
 import Portal from './options/portal'
 import firebase from 'firebase'
-// let name = this.props.navigation.state.params.Name
-
-// let email= this.props.navigation.state.params.Email
-// let enroll= this.props.navigation.state.params.Enroll
 
 export default class Gallery extends React.Component {
-  // static navigationOptions = {
-  //   headerLeftContainerStyle: {
-  //     paddingLeft: 34,
-
-  //   },
-  //   headerRightContainerStyle: {
-  //     paddingRight: 24
-  //   },
-  //   headerLeft: (
-  //     <TouchableOpacity style={{ marginLeft: 10 }}  ><Icon menu /></TouchableOpacity>
-  //   ),
-  //   headerRight: (
-  //     <TouchableOpacity style={{ marginRight: 10 }} onPress={() => {
-  //   //     firebase.auth().signOut().then(function () {
-  //   //     // Sign-out successful.
-  //   //     this.props.navigation.navigate('home')
-  //   //     console.log('correct logout')
-
-  //   // }).catch(function (error) {
-  //   //     // An error happened.
-  //   //     console.log(error)
-  //   // })
-  //   this.props.navigation.navigate('Login')
-
-  // } }><Icon notification /></TouchableOpacity>
-  //   ),
-  //   headerTitle: (
-  //     <Block row middle><Text h4>Features</Text></Block>
-  //   )
-  // }
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -79,6 +45,7 @@ export default class Gallery extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
         >
           <Concession
             name={this.props.navigation.state.params.Name}
@@ -101,6 +68,8 @@ export default class Gallery extends React.Component {
           // overlayBackgroundColor="red"
           width={width * 0.85}
           height={height * 0.85}
+          fullScreen={true}
+
         >
           <Feedbck
             name={this.props.navigation.state.params.Name}
@@ -117,6 +86,7 @@ export default class Gallery extends React.Component {
           width={width * 0.85}
           height={height * 0.85}
           fullScreen={true}
+
         >
           <Portal 
                      name={this.props.navigation.state.params.Name}
@@ -142,7 +112,7 @@ export default class Gallery extends React.Component {
             </View>
             <View style={{ paddingLeft: width * 0.05, paddingRight: width * 0.05, paddingTop: width * 0.05, height: height * 0.05, marginBottom: width * 0.05, }}>
               <Button
-                title="Complaint Portal"
+                title="Query Portal"
                 type="outline"
                 onPress={() => this.setState({ isVisiblePortal: true })}
               />

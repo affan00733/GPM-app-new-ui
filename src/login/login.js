@@ -176,11 +176,7 @@ export default class Login extends Component {
                             </View>
                         </TouchableOpacity>
                     </View>
-                    {/* <Button
-                    title = 'click'
-
-                    onPress={()=>this.press()}
-                    ></Button> */}
+                    
                     <View style={[styles.container, { paddingBottom: 10, marginBottom: 10 }]}>
                         <View style={styles.signupWrap}>
                             <Text style={styles.accountText}>Don't have an account?</Text>

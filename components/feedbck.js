@@ -226,23 +226,14 @@ class CardComponent extends Component {
                         </Body>
                     </Left>
                 </CardItem>
-                <CardItem cardBody>
-                    <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} />
-                </CardItem>
-                <CardItem style={{ height: 45 }}>
-                    <Left>
-
-
-
-                    </Left>
-                </CardItem>
+               
 
 
                 <CardItem>
                     <Body>
 
 
-                        <Card style={{ flex: 1, width: width * 0.70 }}>
+                    <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
@@ -280,7 +271,7 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1, width: width * 0.70 }}>
+                        <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
@@ -340,10 +331,3 @@ class CardComponent extends Component {
 }
 export default CardComponent;
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center'
-//     }
-// });

@@ -19,38 +19,23 @@ class PrincipalDesk extends Component {
 
     render() {
 
-        const images = {
-
-            "1": require('../assets/feed_images/1.jpg'),
-            "2": require('../assets/feed_images/2.jpg'),
-            "3": require('../assets/feed_images/3.png')
-        }
 
         return (
             <Card>
                 <CardItem>
                     <Left>
-                        <Thumbnail source={require('../assets/me.jpg')} />
+                        <Thumbnail source={{uri : 'http://192.168.43.64/GPM/images/principal.jpg'}} />
                         <Body>
-                            <Text>principal desk </Text>
-                            {/* <Text note>Jan 15, 2018</Text> */}
+                            <Text style={{fontWeight: 'bold' }} >principal desk </Text>
                         </Body>
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} />
+                    <Image source={{uri : 'http://192.168.43.64/GPM/images/principal.jpg'}} style={{ height: 200, width: null, flex: 1 }} />
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        {/* <Button transparent>
-                            <Icon name="ios-heart-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button> */}
+                       
 
 
                     </Left>
@@ -71,7 +56,7 @@ class PrincipalDesk extends Component {
                                 </Left>
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
+                                <Text style={{fontWeight: 'bold'}} >Message{'\n\n'} </Text>
 
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>

@@ -20,7 +20,6 @@ import Tender from '../notices/tender'
 const SCREEN_HEIGHT = Dimensions.get('window').height
 const SCREEN_WIDTH = Dimensions.get('window').width
 import { createDrawerNavigator, createAppContainer, createMaterialTopTabNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation';
-// import { Container, Header, Content } from 'native-base';
 import Icon from 'react-native-vector-icons/MaterialIcons'
 const Notice = createMaterialTopTabNavigator({
   Ln: {
@@ -68,7 +67,6 @@ const Notice = createMaterialTopTabNavigator({
         fontWeight : 'bold'
       },
       tabStyle: {
-        // width: 100,
         paddingBottom: SCREEN_HEIGHT * 0.2
       },
 
@@ -220,22 +218,15 @@ export default class Footer extends Component {
               <View
                 style={{ flex: 2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}
               >
-                {/* <Ionicons name="md-rewind" size={40} /> */}
-                {/* <Ionicons name="md-pause" size={50} /> */}
-                {/* <Ionicons name="md-fastforward" size={40} /> */}
                 <Notice />
 
               </View>
               <View
-              // style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, paddingBottom: 20 }}
               >
-                {/* <Ionicons name="md-add" size={32} style={{ color: '#fa95ed' }} /> */}
-                {/* <Ionicons name="md-more" size={32} style={{ color: '#fa95ed' }} /> */}
+               
               </View>
             </Animated.View>
-            {/* <View style={{ height: 1000 }} >
-
-            </View> */}
+      
           </ScrollView>
         </Animated.View>
 
@@ -243,7 +234,6 @@ export default class Footer extends Component {
     );
   }
 }
-// export default AppleMusicUI;
 
 const styles = StyleSheet.create({
   container: {

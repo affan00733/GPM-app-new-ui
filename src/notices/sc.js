@@ -144,10 +144,7 @@ export default class Sc extends Component {
         />
 
 
-        {/* <Button
-          title=""
-          onPress={() => this.fetchData()}
-        /> */}
+       
       </View>
     );
   }

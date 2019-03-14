@@ -18,13 +18,11 @@ import styles from '../src/styles/styles'
 import { Container, Content, Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base'
 const logo = require("./images/GDG.jpg");
 const cardImage = require("./images/serverless.jpg")
-// let width = Dimensions.get('window').width;
 let height = Dimensions.get('window').height;
 import { DocumentPicker, DocumentPickerUtil } from 'react-native-document-picker';
 import RNFS from 'react-native-fs'
 
-// import { RkButton, RkCard } from 'react-native-ui-kitten';
-// import ParallaxScrollView from 'react-native-parallax-scrollview';
+
 let deviceHeight = Dimensions.get('window').height;
 let width = Dimensions.get('window').width;
 
@@ -64,12 +62,10 @@ class CardComponent extends Component {
 
 
 
-            // source: require('./a.pdf')
         }
     }
     componentWillMount() {
-        // this.fetchData();
-        // this.UserRegistrationFunction()
+        
     }
 
     fetchData = () => {
@@ -274,12 +270,7 @@ class CardComponent extends Component {
                 console.log(err);
             });
 
-        // this.setState({name :  ,email : ,enroll : })
-
-        // const {email,enroll}=this.state
-
-        // this.fetchData()
-
+            
 
     }
 
@@ -287,12 +278,7 @@ class CardComponent extends Component {
 
     render() {
 
-        const images = {
-
-            "1": require('../assets/feed_images/1.jpg'),
-            "2": require('../assets/feed_images/2.jpg'),
-            "3": require('../assets/feed_images/3.png')
-        }
+     
 
         return (
             <Card>
@@ -301,48 +287,28 @@ class CardComponent extends Component {
                         <Thumbnail source={require('../assets/me.jpg')} />
                         <Body>
                             <Text>Concession    </Text>
-                            {/* <Text note>Jan 15, 2018</Text> */}
                         </Body>
                     </Left>
                 </CardItem>
-                <CardItem cardBody>
-                    <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} />
-                </CardItem>
-                <CardItem style={{ height: 45 }}>
-                    <Left>
-                        {/* <Button transparent>
-                            <Icon name="ios-heart-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-chatbubbles-outline" style={{ color: 'black' }} />
-                        </Button>
-                        <Button transparent>
-                            <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button> */}
-
-
-                    </Left>
-                </CardItem>
+             
+              
 
 
                 <CardItem>
                     <Body>
 
 
-                        <Card style={{ flex: 1, width: width * 0.70 }}>
+                    <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam</Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Concession</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
-                            {/* <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
-
-                            </CardItem> */}
-                            <CardItem cardBody style={{ paddingLeft: 10, }}>
+                            
+                            <CardItem cardBody style={{ paddingLeft: 10,paddingRight : 10 }}>
 
                                 <View style={[styles.inputsContainer,{borderRadius : 10}]}>
 
@@ -441,19 +407,16 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                        <Card style={{ flex: 1, width: width * 0.70 }}>
+                        <Card style={{ width: width * 0.80}}>
                             <CardItem>
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam</Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Concession</Text>
                                     </Body>
                                 </Left>
                             </CardItem>
-                            {/* <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
-
-                            </CardItem> */}
+                  
                             <CardItem cardBody style={{ paddingLeft: 10 ,alignContent: 'center', alignItems: "center", justifyContent: "center"}}>
 
                                 <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", paddingLeft: 10}} activeOpacity={.5}
@@ -495,11 +458,3 @@ class CardComponent extends Component {
     }
 }
 export default CardComponent;
-
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         alignItems: 'center',
-//         justifyContent: 'center'
-//     }
-// });

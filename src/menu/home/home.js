@@ -116,32 +116,7 @@ class Home extends Component {
         return (
             <SafeAreaView style={styles.overview}>
                 <View style={{ flex: 1 }}>
-                    {/* <Animated.View style={{ height: this.animatedHeaderHeight, backgroundColor: 'white', borderBottomWidth: 1, borderBottomColor: '#dddddd' }}>
-                        <View style={{
-                            flexDirection: 'row', padding: 10,
-                            backgroundColor: 'white', marginHorizontal: 20,
-                            shadowOffset: { width: 0, height: 0 },
-                            shadowColor: 'black',
-                            shadowOpacity: 0.2,
-                            elevation: 1,
-                            marginTop: Platform.OS == 'android' ? 30 : null
-                        }}>
-                            <Icon1 name="ios-search" size={20} style={{ marginRight: 10, marginTop: 14.5 }} />
-                            <TextInput
-                                underlineColorAndroid="transparent"
-                                placeholder="Try New Delhi"
-                                placeholderTextColor="grey"
-                                style={{ flex: 1, fontWeight: '700', backgroundColor: 'white' }}
-                            />
-                        </View>
-                        <Animated.View
-                            style={{ flexDirection: 'row', marginHorizontal: 20, paddingBottom: 10, position: 'relative', top: this.animatedTagTop, opacity: this.animatedOpacity }}
-                        >
-                            <Tag name="Guests" />
-                            <Tag name="Dates" />
-
-                        </Animated.View> 
-                    </Animated.View> */}
+                  
                     <ScrollView
                         scrollEventThrottle={16}
                         onScroll={Animated.event(
@@ -223,42 +198,42 @@ class Home extends Component {
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleGallery: true })}
                                     >
-                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/currriculum.jpg'}}
+                                        <Category imageUri={{ uri: 'http://192.168.43.64/GPM/images/currriculum.jpg' }}
                                             name="Curriculum"
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleCalender: true })}
                                     >
-                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/acadamic.jpg'}}
+                                        <Category imageUri={{ uri: 'http://192.168.43.64/GPM/images/acadamic.jpg' }}
                                             name="Academic Calendar"
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleresult: true })}
                                     >
-                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/result.jpg'}}
+                                        <Category imageUri={{ uri: 'http://192.168.43.64/GPM/images/result.jpg' }}
                                             name="Result"
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleClassTT: true })}
                                     >
-                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/class timetable.jpg'}}
+                                        <Category imageUri={{ uri: 'http://192.168.43.64/GPM/images/class timetable.jpg' }}
                                             name="class time table "
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissibleQuestPaper: true })}
                                     >
-                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/questionpaper.jpg'}}
+                                        <Category imageUri={{ uri: 'http://192.168.43.64/GPM/images/questionpaper.jpg' }}
                                             name="Question Paper "
                                         />
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         onPress={() => this.setState({ isVissiblePlace: true })}
                                     >
-                                        <Category imageUri={{uri : 'http://192.168.43.64/GPM/images/placement services.jpg'}}
+                                        <Category imageUri={{ uri: 'http://192.168.43.64/GPM/images/placement services.jpg' }}
                                             name="placement services "
                                         />
                                     </TouchableOpacity>
