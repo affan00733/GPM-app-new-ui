@@ -142,6 +142,7 @@ class Home extends Component {
                                         // overlayBackgroundColor="red"
                                         width={width * 0.85}
                                         height={height * 0.85}
+                                        fullScreen={true}
                                     >
                                         <Curriclum />
                                     </Overlay>
@@ -152,6 +153,8 @@ class Home extends Component {
                                         // overlayBackgroundColor="red"
                                         width={width * 0.85}
                                         height={height * 0.85}
+                                        fullScreen={true}
+
                                     >
                                         <AcadCal />
                                     </Overlay>
@@ -162,6 +165,8 @@ class Home extends Component {
                                         // overlayBackgroundColor="red"
                                         width={width * 0.85}
                                         height={height * 0.85}
+                                        fullScreen={true}
+
                                     >
                                         <ClassTT />
                                     </Overlay>
@@ -172,6 +177,8 @@ class Home extends Component {
                                         // overlayBackgroundColor="red"
                                         width={width * 0.85}
                                         height={height * 0.85}
+                                        fullScreen={true}
+
                                     >
                                         <PlacSer />
                                     </Overlay>
@@ -182,6 +189,8 @@ class Home extends Component {
                                         // overlayBackgroundColor="red"
                                         width={width * 0.85}
                                         height={height * 0.85}
+                                        fullScreen={true}
+
                                     >
                                         <QuestPaper />
                                     </Overlay>
@@ -192,6 +201,8 @@ class Home extends Component {
                                         // overlayBackgroundColor="red"
                                         width={width * 0.85}
                                         height={height * 0.85}
+                                        fullScreen={true}
+
                                     >
                                         <Result />
                                     </Overlay>
@@ -303,6 +314,8 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
                                     // overlayBackgroundColor="red"
                                     width={width * 0.85}
                                     height={height * 0.85}
+                                    fullScreen={true}
+
                                 >
                                     {/* <GalleryClick /> */}
                                     <Gallery
@@ -330,6 +343,8 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
                                     // overlayBackgroundColor="red"
                                     width={width * 0.85}
                                     height={height * 0.85}
+                                    fullScreen={true}
+
                                 >
                                     {/* <GalleryClick /> */}
                                     <Gallery
@@ -379,6 +394,8 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
                                     // overlayBackgroundColor="red"
                                     width={width * 0.85}
                                     height={height * 0.85}
+                                    fullScreen={true}
+
                                 >
                                     {/* <GalleryClick /> */}
                                     <Gallery
@@ -422,6 +439,8 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
                                     // overlayBackgroundColor="red"
                                     width={width * 0.85}
                                     height={height * 0.85}
+                                    fullScreen={true}
+
                                 >
                                     {/* <GalleryClick /> */}
                                     <Gallery
@@ -436,6 +455,7 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
 
 
                                         ]}
+
                                     />
                                 </Overlay>
                                 <HomeNew width={width}

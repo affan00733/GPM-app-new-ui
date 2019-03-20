@@ -165,7 +165,7 @@ export default class Login extends Component {
                         </View>
                         <TouchableOpacity activeOpacity={.5}>
                             <View>
-                                <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+                                {/* <Text style={styles.forgotPasswordText}>Forgot Password?</Text> */}
                             </View>
                         </TouchableOpacity>
                         <TouchableOpacity style={{ alignContent: 'center', alignItems: "center", justifyContent: "center", }} activeOpacity={.5}

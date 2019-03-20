@@ -38,11 +38,11 @@ class CardComponent extends Component {
                     </Left>
                 </CardItem>
                 <CardItem cardBody>
-                    <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} />
+                    {/* <Image source={images[1]} style={{ height: 200, width: null, flex: 1 }} /> */}
                 </CardItem>
                 <CardItem style={{ height: 45 }}>
                     <Left>
-                        <Button transparent>
+                        {/* <Button transparent>
                             <Icon name="ios-heart-outline" style={{ color: 'black' }} />
                         </Button>
                         <Button transparent>
@@ -50,7 +50,7 @@ class CardComponent extends Component {
                         </Button>
                         <Button transparent>
                             <Icon name="ios-send-outline" style={{ color: 'black' }} />
-                        </Button>
+                        </Button> */}
 
 
                     </Left>
@@ -66,19 +66,15 @@ class CardComponent extends Component {
                                 <Left>
                                     <Thumbnail source={logo1} />
                                     <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
+                                        <Text style={{ fontWeight: 'bold' }}>Consultancy and testing  </Text>
                                     </Body>
                                 </Left>
                             </CardItem>
                             <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>Message{'\n\n'} </Text>
+                                <Text style={{fontWeight: 'bold'}}>Comming Soon{'\n\n'} </Text>
 
                             </CardItem>
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text> Government Polytechnic Mumbai is an autonomous institute of Government of Maharashtra. Recently in 2010, we have celebrated Golden Jubilee of the institute.{'\n\n'}We have a team of highly qualified, experienced and dedicated faculties and non-teaching staff who are devoted to achieve excellence in the every activity of the institute. We own an excellent infrastructure, well equipped engineering departments, libraries, training and Placement cell, class rooms, seminar rooms and Auditorium Hall etc. {'\n\n'}The synergic efforts taken at the institute will help to achieve the vision of the institute and  make our student globally competitive entrepreneurs and employable engineers. This will ultimately help to transform them into a knowledge pool for India.</Text>
-
-
-                            </CardItem>
+                           
                          
                             <CardItem style={{ paddingVertical: 0 }}>
                                 <Left>
@@ -93,32 +89,7 @@ class CardComponent extends Component {
                             </CardItem>
                         </Card>
                         {/*  */}
-                                                <Card style={{ width: width * 0.80}}>
-                            <CardItem>
-                                <Left>
-                                    <Thumbnail source={logo1} />
-                                    <Body>
-                                        <Text style={{ fontWeight: 'bold' }}>principal mam<Text style={{ fontWeight: 'normal', opacity: 0.5 }}> @MKBHD  •<Text>  2h</Text></Text></Text>
-                                    </Body>
-                                </Left>
-                            </CardItem>
-                           
-                          
-                            <CardItem cardBody style={{ paddingLeft: 10 }}>
-                                <Text>{'\n\n'}Prof.Swati D. Deshpande{'\n\n'} Ph:  9029001925{'\n\n'}  Email:  principal@gpmumbai.ac.in</Text>
-                            </CardItem>
-                            <CardItem style={{ paddingVertical: 0 }}>
-                                <Left>
-                                    <Text></Text>
-                                </Left>
-                                <Body>
-
-                                </Body>
-                                <Right>
-
-                                </Right>
-                            </CardItem>
-                        </Card>
+                                
                     </Body>
                 </CardItem>
             </Card>

@@ -76,7 +76,7 @@ class CardComponent extends Component {
                                 // overlayBackgroundColor="red"
                                 width={width * 0.85}
                                 height={height * 0.85}
-                                // fullScreen = {true}
+                                fullScreen = {true}
                             >
                                 <Pdf
                                     source={{ uri: `http://192.168.43.64/GPM/pdf/p16/p16${this.state.dept}${this.state.sem}.pdf` }}

@@ -70,7 +70,7 @@ class CardComponent extends Component {
                     <Body>
 
 
-                        <Card style={{ flex: 1, width: width * 0.70 }}>
+                    <Card style={{ width: width * 0.80}}>
                             <Overlay
                                 isVisible={this.state.isVisiblepdf}
                                 onBackdropPress={() => this.setState({ isVisiblepdf: false })}
@@ -78,7 +78,7 @@ class CardComponent extends Component {
                                 // overlayBackgroundColor="red"
                                 width={width * 0.85}
                                 height={height * 0.85}
-                            // fullScreen = {true}
+                            fullScreen = {true}
                             >
                                 <Pdf
                                     source={{ uri: `http://192.168.43.64/GPM/pdf_TT/${this.state.dept}${this.state.year}${this.state.shift}.pdf` }}
