@@ -1,62 +1,86 @@
-import React from 'react';
-import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
-import { createStackNavigator } from 'react-navigation'
-import MainScreen from '../../../../components/AppTabNavigator/reach'
-import { Block, Card, Icon, Label } from '../../../components';
-import Mapbox from '@mapbox/react-native-mapbox-gl'
-Mapbox.setAccessToken('pk.eyJ1IjoiYWZmYW4wMDciLCJhIjoiY2p0Z2xoajRiMGxrazQ2bGh4OG96cmQ3eiJ9.v9_zpb5p-9fYOXUm-LKcPw')
-export default class Reach extends React.Component {
-  constructor(props) {
-    super(props);
+import React, {Component} from 'react';
+import {View, Image,PermissionsAndroid} from 'react-native';
+import MapboxGL from '@mapbox/react-native-mapbox-gl';
 
+MapboxGL.setAccessToken('pk.eyJ1IjoiYWZmYW4wMDciLCJhIjoiY2p0Z2xoajRiMGxrazQ2bGh4OG96cmQ3eiJ9.v9_zpb5p-9fYOXUm-LKcPw');
+// Mapbox.setAccessToken('')
+
+const coordinates = [
+  [72.84517819,19.06257977]  
+]
+
+export default class App extends Component {
+  constructor (props) {
+    super(props);
+  
     this.state = {
-      latitude: null,
-      longitude: null,
-      error:null,
+      coordinates: coordinates
     };
   }
+  componentDidMount() 
+    {
+     PermissionsAndroid.requestMultiple(
+                [PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+                PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION],
+                {
+                    title: 'Give Location Permission',
+                message: 'App needs location permission to find your position.'
+            }
+        ).then(granted => {
+            console.log(granted);
+            resolve();
+        }).catch(err => {
+            console.warn(err);
+            reject(err);
+        });
+    }
+  renderAnnotation (counter) {
+    const id = `pointAnnotation${counter}`;
+    const coordinate = this.state.coordinates[counter];
+    const title = `Longitude: ${this.state.coordinates[counter][0]} Latitude: ${this.state.coordinates[counter][1]}`;
 
-  
-  render() {
     return (
-      // <AppStackNavigator />
-      <View       style={{flex : 1}}
-      >
-      <Mapbox.MapView  
-      zoomLevel={15}
-      centerCoordinate={[11.256,43.77]}
-      style={{flex : 1}}
-      />
-    </View>
+      <MapboxGL.PointAnnotation
+        key={id}
+        id={id}
+        title='Government Polytechnic Mumbai'
+        coordinate={coordinate}>
+
+        <Image
+        source={require('./marker.png')}
+        style={{
+          flex: 1,
+          resizeMode: 'contain',
+          width: 35,
+          height: 35
+          }}/>
+      </MapboxGL.PointAnnotation>
     );
   }
 
-}
+  renderAnnotations () {
+    const items = [];
 
-const AppStackNavigator = createStackNavigator({
+    for (let i = 0; i < this.state.coordinates.length; i++) {
+      items.push(this.renderAnnotation(i));
+    }
 
-  Main: {
-    screen: MainScreen
+    return items;
   }
-},{
-  headerMode : 'none'
-})
 
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  map: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-})
+  render () {
+    return (
+      <View style={{flex: 1}}>
+        <MapboxGL.MapView
+        ref={(c) => this._map = c}
+        style={{flex: 1}}
+        zoomLevel={17}
+        showUserLocation={true}
+        userTrackingMode={1}
+        centerCoordinate={this.state.coordinates[0]}>
+          {this.renderAnnotations()}
+        </MapboxGL.MapView>
+      </View>
+      );
+  }
+}
