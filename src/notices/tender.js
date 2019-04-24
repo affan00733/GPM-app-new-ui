@@ -85,7 +85,7 @@ export default class Tender extends Component {
 
     console.log('source', this.state.source)
     return (
-      <View style={[styles.container,{backgroundColor: '#FFA07A'}]}>
+      <View style={[styles.container,{backgroundColor: '#F0F3F4'}]}>
 
 
         <Modal

@@ -496,7 +496,7 @@ The Polytechnic acquired existing campus in  May, 1985.{'\n'}
                             >
                                 <Block style={styles.driver}>
                                     <TouchableOpacity activeOpacity={0.8}
-                                        onPress={() => this.props.navigation.navigate('St')}
+                                        // onPress={() => this.props.navigation.navigate('St')}
                                     >
                                         <Block row center>
                                             <Block>
